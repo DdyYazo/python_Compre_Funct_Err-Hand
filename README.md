@@ -37,6 +37,37 @@ Los conjuntos en Python son estructuras de datos que representan una colección 
 4. **Mutables**: Aunque los elementos dentro del conjunto son inmutables, el conjunto en sí es mutable. Podemos agregar o eliminar elementos de él.
 5. **No soportan indexación**: Debido a que los conjuntos son desordenados, no puedes acceder a los elementos de un conjunto por un índice.
 
+### Sets en estructuras de datos 
+Los conjuntos en Python también pueden ser creados a partir de otras estructuras de datos como cadenas, tuplas o listas
+
+**Ejemplos**
+
+1. Se crea un conjunto a partir de la cadena "HolaaaMundo". El conjunto resultante contiene cada carácter único de la cadena. Los caracteres duplicados, como las tres 'a', se eliminan en el conjunto resultante.
+```python
+# Crear un conjunto a partir de una cadena
+cadena = "HolaaaMundo"
+conjunto_cadena = set(cadena)
+print(conjunto_cadena)  # Output: {'a', 'd', 'H', 'l', 'n', 'o', 'M', 'u'}
+```
+
+2. Se crea un conjunto a partir de la tupla ('abc', 'cbv', 'as','abc'). El conjunto resultante contiene cada elemento único de la tupla. Los elementos duplicados, como 'abc', se eliminan en el conjunto resultante.
+
+```python
+# Crear un conjunto a partir de una tupla
+tupla = ('abc', 'cbv', 'as','abc')
+conjunto_tupla = set(tupla)
+print(conjunto_tupla)  # Output: {'as', 'abc', 'cbv'}
+```
+3. Además, se puede crear un conjunto a partir de una lista. Cuando se crea un conjunto a partir de una lista, el conjunto contiene los elementos únicos de la lista. Los elementos duplicados se eliminan en el conjunto resultante.
+
+```python
+# Crear un conjunto a partir de una lista
+lista = ['manzana', 'banana', 'cereza', 'manzana', 'cereza']
+conjunto_lista = set(lista)
+print(conjunto_lista)  # Output: {'manzana', 'banana', 'cereza'}
+```
+* Y de igual modo se puede transfomar los 
+
 Los conjuntos en Python también soportan operaciones matemáticas como la **unión**, **intersección**, **diferencia** y **diferencia simétrica**.
 
 Por ejemplo, en [01_set.py](python/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
