@@ -4,7 +4,7 @@ os.system("clear")
 
 import this 
 
-# Con esta libreira podemos ver el Zen de Python el cual nos da una serie de consejos para programar en Python
+# Con esta libreria podemos ver el Zen de Python el cual nos da una serie de consejos para programar en Python
 """ El primero de ellos en español es:	
 1. Hermoso es mejor que feo.
 2. Explícito es mejor que implícito.
