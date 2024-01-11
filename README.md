@@ -3,6 +3,7 @@
 
 Este repositorio es una excelente fuente de información para cualquier persona que quiera aprender o revisar estos conceptos de Python.
 
+
 ## El Zen de Python
  El [Zen_python.py](Zen_python.py) muestra el Zen de Python, que es una colección de 19 "aforismos" que sirven como principios guía para escribir programas en Python. Aquí hay un resumen de estos aforismos:
 
@@ -26,7 +27,9 @@ Este repositorio es una excelente fuente de información para cualquier persona 
 18. Si la implementación es fácil de explicar, puede ser una buena idea.
 19. Los espacios de nombres son una gran idea, ¡hagamos más de esos!
 
-## Conjuntos `Sets` en Python
+
+## [01_set.py](python/01_set.py): Creación y manipulación de conjuntos en Python
+
 Los conjuntos en Python son estructuras de datos que representan una colección de elementos únicos en un orden no garantizado. Se definen de manera similar a las listas y las tuplas, pero en lugar de usar corchetes `[]` o paréntesis `()`, se usan llaves `{}`. 
 
 ### Características de los conjuntos en Python:
@@ -66,8 +69,56 @@ lista = ['manzana', 'banana', 'cereza', 'manzana', 'cereza']
 conjunto_lista = set(lista)
 print(conjunto_lista)  # Output: {'manzana', 'banana', 'cereza'}
 ```
-* Y de igual modo se puede transfomar los 
+### Transformación de `(sets)` a estructuras como `(list)` 
+
+Por otro lado, los conjuntos en Python pueden ser convertidos de nuevo a listas. Esto es útil cuando necesitas restaurar el orden de los elementos, ya que los conjuntos no mantienen un orden específico. Para convertir un conjunto a una lista, puedes usar la función `list()`.
+
+Por ejemplo:
+
+```python
+# Tomando de base el output del set anterior
+
+# Convertir el conjunto a una lista con el mismo output
+lista = list(lista)
+print(lista)  # Output: ['manzana', 'banana', 'cereza']
+```
 
 Los conjuntos en Python también soportan operaciones matemáticas como la **unión**, **intersección**, **diferencia** y **diferencia simétrica**.
 
 Por ejemplo, en [01_set.py](python/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
+
+## [02_crud-set.py](python/02_crud-set.py): Operaciones CRUD en conjuntos de Python
+
+En Python, los conjuntos permiten realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Aquí hay un resumen de los puntos clave:
+
+1. **Crear (Create)**: Se puede crear un conjunto usando llaves `{}` o la función `set()`. Cada elemento debe ser único.
+
+```python
+# Crear un conjunto con tres elementos
+conjunto = {'manzana', 'banana', 'cereza'}
+```
+2. **Leer (Read)**: Se puede iterar sobre un conjunto usando un bucle `for`. También se puede comprobar si un elemento existe en un conjunto usando la palabra clave `in`.
+```python
+# Leer e imprimir cada elemento del conjunto
+for fruta in conjunto:
+    print(fruta)
+```
+3. **Actualizar (Update)**: Se puede agregar un elemento a un conjunto usando el método `add()`. Para agregar varios elementos, se usa el método `update()`.
+```python
+# Agregar un elemento al conjunto
+conjunto.add('naranja')
+# Agregar varios elementos al conjunto
+conjunto.update(['kiwi', 'mango'])
+```
+4. **Eliminar (Delete)**: Se puede eliminar un elemento de un conjunto usando los métodos `remove()` o` discard()`. La diferencia es que` remove()` lanzará un error si el elemento no existe, mientras que `discard()` no.
+```python
+# Eliminar un elemento del conjunto
+conjunto.remove('banana')
+# Intentar eliminar un elemento que puede no estar en el conjunto
+conjunto.discard('kiwi')
+```
+5. **Limpiar (Clear)**: Se puede eliminar todos los elementos de un conjunto usando el método `clear()`.
+```python
+# Limpiar un conjunto
+conjunto.clear()
+```
