@@ -102,6 +102,12 @@ conjunto = {'manzana', 'banana', 'cereza'}
 # Leer e imprimir cada elemento del conjunto
 for fruta in conjunto:
     print(fruta)
+
+# O tambien con solo la consulta
+print('manzana' in conjunto)
+
+# Del mismo modo saber el tamaño
+size = len(conjunto)
 ```
 3. **Actualizar (Update)**: Se puede agregar un elemento a un conjunto usando el método `add()`. Para agregar varios elementos, se usa el método `update()`.
 ```python
