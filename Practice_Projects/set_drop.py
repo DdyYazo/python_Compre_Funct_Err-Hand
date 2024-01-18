@@ -9,7 +9,7 @@ northAm = {"USA", "CANADA"}
 centralAm = {"MX", "GT", "BZ"}
 southAm = {"COL", "BZ", "ARG"}
 
-new_set = countries.union(northAm, centralAm, southAm) # Usando el metodo union se unen los conjuntos
+new_set = countries.union(northAm, centralAm, southAm) # Usando  el metodo union se unen los conjuntos
 print(new_set) # Al imprimirlo se puede ver que se unieron los conjuntos y se eliminaron los elementos repetidos los cuales son BZ, MX, COL, ARG, USA, GT, CANADA
 
 print(countries|northAm|centralAm|southAm) # Usando el operador | se unen los conjuntos
