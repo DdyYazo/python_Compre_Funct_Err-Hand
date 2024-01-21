@@ -32,7 +32,7 @@ Este repositorio es una excelente fuente de información para cualquier persona 
 
 # Estructura de datos 1: Conjuntos `(sets)`
 
-## [01_set.py](python/01_set.py): Creación y manipulación de conjuntos en Python
+## [01_set.py](Python_Sets-Compren_Classes/01_set.py): Creación y manipulación de conjuntos en Python
 
 Los conjuntos en Python son estructuras de datos que representan una colección de elementos únicos en un orden no garantizado. Se definen de manera similar a las listas y las tuplas, pero en lugar de usar corchetes `[]` o paréntesis `()`, se usan llaves `{}`. 
 
@@ -89,10 +89,10 @@ print(lista)  # Output: ['manzana', 'banana', 'cereza']
 
 Los conjuntos en Python también soportan operaciones matemáticas como la **unión**, **intersección**, **diferencia** y **diferencia simétrica**.
 
-Por ejemplo, en [01_set.py](python/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
+Por ejemplo, en [01_set.py](Python_Sets-Compren_Classes/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
 
 
-## [02_crud-set.py](python/02_crud-set.py): Operaciones CRUD en conjuntos de Python
+## [02_crud-set.py](Python_Sets-Compren_Classes/02_crud-set.py): Operaciones CRUD en conjuntos de Python
 
 En Python, los conjuntos permiten realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Aquí hay un resumen de los puntos clave:
 
@@ -135,7 +135,7 @@ conjunto.clear()
 ```
 
 
-## [03_set-operations.py](python/03_set-operations.py): Operaciones de conjuntos en Python
+## [03_set-operations.py](Python_Sets-Compren_Classes/03_set-operations.py): Operaciones de conjuntos en Python
 
 El archivo `03_set-operations.py` demuestra cómo realizar operaciones de conjuntos en Python. Aquí hay un resumen de los puntos clave:
 
@@ -194,7 +194,7 @@ isSuperset = setCountriesA.issuperset(setCountriesB)
 
 # Estructuras de datos 2: Listas `(list)` y Diccionarios `(dict)` con Comprenhentions
 
-## [04_list-compren.py](04_list-compren.py): Comprensión de listas en Python
+## [04_list-compren.py](Python_Sets-Compren_Classes/04_list-compren.py): Comprensión de listas en Python
 
 El archivo `04_list-compren.py` aborda el tema de la comprensión de listas en Python, una característica que permite crear y transformar listas de una manera concisa y legible.
 
@@ -255,7 +255,7 @@ print(numbers_V3
 ```
 
 
-## [05_dict-compren.py](05_dict-compren.py): Comprensión de diccionarios en Python
+## [05_dict-compren.py](Python_Sets-Compren_Classes/05_dict-compren.py): Comprensión de diccionarios en Python
 
 El archivo `05_dict-compren.py` se centra en la comprensión de diccionarios en Python. La comprensión de diccionarios es una forma concisa de crear diccionarios a partir de estructuras de datos existentes.
 
@@ -335,7 +335,7 @@ print(dict3)  # Se imprime el diccionario
 > La primera forma es más eficiente que la segunda para evitar errores de indexación.
 
 
-## [06_dict-compren-condi.py](06_dict-compren-condi.py): Comprensión de diccionarios con condiciones en Python
+## [06_dict-compren-condi.py](Python_Sets-Compren_Classes/06_dict-compren-condi.py): Comprensión de diccionarios con condiciones en Python
 
 En este archivo, exploramos cómo usar la comprensión de diccionarios con condiciones.
 
@@ -389,3 +389,194 @@ print(unique)
 
 ## Diferencias entre `List` vs `Tuples` vs `Sets`
 ![](https://i.postimg.cc/B6TvLHvk/imagen-2024-01-17-180952810.png)
+
+
+
+
+# Funciones y 
+
+
+## [07_fuctions.py](Python_Functions_Classes/07_fuctions.py): Funciones en Python
+
+Son un conjunto de instrucciones que realizan una tarea específica y que pueden ser reutilizadas en cualquier parte del programa.
+
+### Definición de Funciones
+Las funciones se definen con la palabra clave `def`, seguida del nombre de la función y un par de paréntesis que contienen los parámetros. El cuerpo de la función está indentado y contiene las instrucciones que se ejecutarán cuando se llame a la función.
+### Llamada de Funciones
+Las funciones se llaman por su nombre, seguido de un par de paréntesis que contienen los argumentos.
+
+>[!TIP]
+> - El valor que ingresas cuando llamas la funcion se llama `PARAMETRO`
+> 
+> - Mientras que el valor que usamos dentro de la funcion se llama `ARGUMENTO`
+<p align="center">
+  <img src="https://i.postimg.cc/XYV0jZy2/imagen-2024-01-19-185546469.png" alt="Aquí va el texto del enlace">
+</p>
+
+### Función sin Parámetros
+
+```python
+def saludo(): # Definicion de la funcion
+    print("Hola, soy una funcion") # Cuerpo de la funcion
+    print("Hola de nuevo, soy una funcion") # Cuerpo de la funcion
+saludo()
+```
+### Función con Parámetros
+
+```python
+def suma(number): # Definicion de la funcion
+    print(number * 2) # Cuerpo de la funcion
+suma(5)
+```
+### Función dentro de otra función
+
+```python
+def suma2(a,b): # Definicion de la funcion
+    suma(a+b) # En este caso se llama a la funcion suma() dentro de la funcion suma2()
+suma2(5,10) # Al imprimirse muestra la suma de los parametros de la funcion sum2() multiplicados por 2 teniendo en cuenta que la funcion suma() multiplica por 2
+suma2(10,10)
+```
+
+###  Principio DRY
+> [!IMPORTANT]
+>
+> Las funciones nos ayudan a cumplir con uno de los principios más importantes de la programación como lo es el principio **DRY (don’t repeat yourself)** o (no te repitas).
+> 
+> Al tener la lógica en una función evitas tener que escribir la misma lógica una y otra vez, de modo que tienes un código más limpio y más escalable.
+
+
+## [08_func-return.py](Python_Functions_Classes/08_func-return.py): Funciones con retorno de variables
+
+Son un conjunto de instrucciones que realizan una tarea específica, retornan un valor y pueden ser reutilizadas en cualquier parte del programa.
+
+<p align="center">
+  <img src="https://i.postimg.cc/L8K02hnJ/imagen-2024-01-19-202454349.png" alt="Aquí va el texto del enlace">
+</p>
+
+### Definición de Funciones con Retorno
+Las funciones con retorno se definen con la palabra clave `def`, seguida del nombre de la función y un par de paréntesis que contienen los parámetros. El cuerpo de la función está indentado y contiene las instrucciones que se ejecutarán cuando se llame a la función. Al final del cuerpo de la función, se utiliza la palabra clave `return` para indicar el valor que la función retornará.
+
+### Llamada de Funciones con Retorno
+Las funciones con retorno se llaman por su nombre, seguido de un par de paréntesis que contienen los argumentos. El valor retornado por la función se puede almacenar en una variable para su uso posterior.
+
+### Comprendiendo la logica del return mediante un ciclo for
+```python
+sum = 0
+for x in range(1,10):
+    sum += x
+print(sum) # Este codigo imprime la suma de los numeros del 1 al 9 sin embargo si se quiere hacer la suma de los numeros del 1 al 1000 se tendria que modificar el codigo repetidas veces y esto no es eficiente por eso se crean las funciones con retorno
+```
+
+### Implementación de una "Función" para agilizar el código anterior
+```python
+def sum_with_range(min,max): # Definicion de la funcion
+    sum = 0 # Variable que almacena la suma de los numeros
+    for x in range(min,max): # Ciclo for que recorre los numeros del 1 al 1000
+        sum += x # Esta linea suma los numeros del 1 al 1000
+    print(sum)
+    
+sum_with_range(1,10) # En este caso el resultado seria 10 porque se suman los numeros del 1 al 9 como factorial
+sum_with_range(20,30) # Este codigo imprime la suma de los numeros del 20 al 29
+sum_with_range(1,100) # Este codigo imprime la suma de los numeros del 1 al 99
+```
+
+### Implementación de una "Función con retorno"
+```python
+def sum_with_range2(min,max): # Definicion de la funcion
+    print(f"Entrada de los parametros minimo '{min}' y maximo '{max}' ")
+    sum = 0 # Variable que almacena la suma de los numeros
+    for x in range(min,max): # Ciclo for que recorre los numeros del 1 al 1000
+        sum += x # Esta linea suma los numeros del 1 al 1000
+    return sum # Esta linea retorna el valor de la suma
+
+# Luego de esto es necesario declarar una variable que almacene el valor de retorno de la funcion de lo contrario no se podra imprimir el resultado de la funcion
+
+result = sum_with_range2(1,10) # Se declara una variable que almacena el valor de retorno de la funcion
+print(f"El resultado de la suma de los parametros es: {result}")
+
+result_2 = sum_with_range2(result,result+10)
+print(f"El resultado de la suma de los parametros es: {result_2}")
+```
+
+
+## [09_func-returnMul.py](Python_Functions_Classes/09_func-returnMul.py): Funciones con retorno de multiples valores y valores por defecto
+
+### Funciones con Retorno de Múltiples Valores 
+Las funciones pueden retornar múltiples valores, que se pueden almacenar en varias variables.
+```python
+def find_volume(lenth, width, depth): # En este caso se establecen los argumentos
+    return lenth*width*depth # Se retorna el resultado de la operacion
+
+result = find_volume(2,3,4) # Se declara la variable result y se le asigna el valor de la funcion find_volume
+print(f"El volumen es: {result}") 
+```
+
+### Funciones con Parámetros por Defecto
+Las funciones pueden tener parámetros con valores por defecto, que se utilizarán si no se proporciona un argumento para ese parámetro al llamar a la función.
+```python
+def find_volume2(length=2, width=3, depth=4): # En este caso se establecen los argumentos por defecto
+    return length*width*depth, width, 'hola' # Se retorna el resultado de la operacion
+print(f"El volumen es: {find_volume2()}") # En este caso se imprime el resultado de la funcion con los valores por defecto
+```
+
+### Reasignar un nuevo argumento a un parametro especifico
+```python
+print(f"El volumen es: {find_volume2(width=5)}") # En este caso se reasigna el valor del width a 5 dando como resultado el volumen de 40
+```
+
+### Retornar mas de una función por separado
+```python
+result2, width, saludo = find_volume2() # En este caso se declara las variables result2, width y saludo y se le asigna el valor de la funcion find_volume2
+print(f"El volumen es: {result2}") # Se imprime el valor de la variable result2
+print(f"El ancho es: {width}") # Se imprime el valor de la variable width
+print(f"El saludo es: {saludo}") # Se imprime el valor de la variable saludo
+```
+
+## [09_func-returnMul.py](Python_Functions_Classes/09_func-returnMul.py): Alcance de variables o `scope` en Python
+
+El scope es la visibilidad de una variable dentro de un programa, es decir, en qué partes del programa se puede acceder a una variable o no.
+
+### Variables Globales
+Las variables globales se pueden acceder desde cualquier parte del programa.
+```python
+# En este caso la variable global es 'name' y se puede acceder a ella desde cualquier parte del programa
+name = "Juan" # Variable global
+print(f"El nombre es: {name}") # Se imprime el valor de la variable global
+```
+
+### Variables Locales
+Las variables locales solo se pueden acceder desde el bloque de código donde se declararon, generalmente dentro de una función.
+```python
+# En este caso la variable local es 'name' y solo se puede acceder a ella desde el bloque de codigo donde se declaro es decir dentro de la funcion
+def print_name():
+    name = "Luisa" # Variable local
+    print(f"El nombre es: {name}") # Se imprime el valor de la variable local
+print_name() # Se ejecuta la funcion
+```
+
+### Conversión de Variables Locales en Globales
+Una variable local puede convertirse en global utilizando la palabra clave `global`.
+```python
+# En este caso se puede acceder a la variable global y local desde cualquier parte del programa
+def print_name():
+    global name # Se declara la variable global
+    name = "Luisa" # Variable local
+print_name() # Se ejecuta la funcion
+print(f"El nombre es: {name}") # Se imprime el valor de la variable global
+```
+
+### Diferencia entre una variable global y una variable local
+La variable global se puede acceder desde cualquier parte del programa mientras que la variable local solo se puede acceder desde el bloque de codigo donde se declaro mayormente dentro de una funcion
+```python
+name = "Juan" # Variable global
+def print_name():
+    name = "Luisa" # Variable local
+    print(f"El nombre es: {name}") # Se imprime el valor de la variable local
+print_name() # Se ejecuta la funcion
+print(f"El nombre es: {name}") # Se imprime el valor de la variable global
+```
+
+
+
+
+
