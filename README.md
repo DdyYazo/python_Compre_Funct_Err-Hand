@@ -32,7 +32,7 @@ Este repositorio es una excelente fuente de información para cualquier persona 
 
 # Estructura de datos 1: Conjuntos `(sets)`
 
-## [01_set.py](Mod_1-2:-Python_Sets-Compren_Classes/01_set.py): Creación y manipulación de conjuntos en Python
+## [01_set.py](Mod_1_2_Python_Sets_Compren/01_set.py): Creación y manipulación de conjuntos en Python
 
 Los conjuntos en Python son estructuras de datos que representan una colección de elementos únicos en un orden no garantizado. Se definen de manera similar a las listas y las tuplas, pero en lugar de usar corchetes `[]` o paréntesis `()`, se usan llaves `{}`. 
 
@@ -89,10 +89,10 @@ print(lista)  # Output: ['manzana', 'banana', 'cereza']
 
 Los conjuntos en Python también soportan operaciones matemáticas como la **unión**, **intersección**, **diferencia** y **diferencia simétrica**.
 
-Por ejemplo, en [01_set.py](Mod_1-2:-Python_Sets-Compren_Classes/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
+Por ejemplo, en [01_set.py](Mod_1_2_Python_Sets_Compren/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
 
 
-## [02_crud-set.py](Mod_1-2:-Python_Sets-Compren_Classes/02_crud-set.py): Operaciones CRUD en conjuntos de Python
+## [02_crud-set.py](Mod_1_2_Python_Sets_Compren/02_crud-set.py): Operaciones CRUD en conjuntos de Python
 
 En Python, los conjuntos permiten realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Aquí hay un resumen de los puntos clave:
 
@@ -135,7 +135,7 @@ conjunto.clear()
 ```
 
 
-## [03_set-operations.py](Mod_1-2:-Python_Sets-Compren_Classes/03_set-operations.py): Operaciones de conjuntos en Python
+## [03_set-operations.py](Mod_1_2_Python_Sets_Compren/03_set-operations.py): Operaciones de conjuntos en Python
 
 El archivo `03_set-operations.py` demuestra cómo realizar operaciones de conjuntos en Python. Aquí hay un resumen de los puntos clave:
 
@@ -194,7 +194,7 @@ isSuperset = setCountriesA.issuperset(setCountriesB)
 
 # Estructuras de datos 2: Listas `(list)` y Diccionarios `(dict)` con Comprenhentions
 
-## [04_list-compren.py](Mod_1-2:-Python_Sets-Compren_Classes/04_list-compren.py): Comprensión de listas en Python
+## [04_list-compren.py](Mod_1_2_Python_Sets_Compren/04_list-compren.py): Comprensión de listas en Python
 
 El archivo `04_list-compren.py` aborda el tema de la comprensión de listas en Python, una característica que permite crear y transformar listas de una manera concisa y legible.
 
@@ -255,7 +255,7 @@ print(numbers_V3
 ```
 
 
-## [05_dict-compren.py](Mod_1-2:-Python_Sets-Compren_Classes/05_dict-compren.py): Comprensión de diccionarios en Python
+## [05_dict-compren.py](Mod_1_2_Python_Sets_Compren/05_dict-compren.py): Comprensión de diccionarios en Python
 
 El archivo `05_dict-compren.py` se centra en la comprensión de diccionarios en Python. La comprensión de diccionarios es una forma concisa de crear diccionarios a partir de estructuras de datos existentes.
 
@@ -335,7 +335,7 @@ print(dict3)  # Se imprime el diccionario
 > La primera forma es más eficiente que la segunda para evitar errores de indexación.
 
 
-## [06_dict-compren-condi.py](Mod_1-2:-Python_Sets-Compren_Classes/06_dict-compren-condi.py): Comprensión de diccionarios con condiciones en Python
+## [06_dict-compren-condi.py](Mod_1_2_Python_Sets_Compren/06_dict-compren-condi.py): Comprensión de diccionarios con condiciones en Python
 
 En este archivo, exploramos cómo usar la comprensión de diccionarios con condiciones.
 
@@ -396,7 +396,7 @@ print(unique)
 # Funciones en Python y las mas utilizadas
 
 
-## [07_fuctions.py](Mod_3:-Python_Functions_Classes/07_fuctions.py): Funciones en Python
+## [07_fuctions.py](Mod_3_Python_Functions/07_fuctions.py): Funciones en Python
 
 Son un conjunto de instrucciones que realizan una tarea específica y que pueden ser reutilizadas en cualquier parte del programa.
 
@@ -445,7 +445,7 @@ suma2(10,10)
 > Al tener la lógica en una función evitas tener que escribir la misma lógica una y otra vez, de modo que tienes un código más limpio y más escalable.
 
 
-## [08_func-return.py](Mod_3:-Python_Functions_Classes/08_func-return.py): Funciones con retorno de variables
+## [08_func-return.py](Mod_3_Python_Functions/08_func-return.py): Funciones con retorno de variables
 
 Son un conjunto de instrucciones que realizan una tarea específica, retornan un valor y pueden ser reutilizadas en cualquier parte del programa.
 
@@ -499,7 +499,7 @@ print(f"El resultado de la suma de los parametros es: {result_2}")
 ```
 
 
-## [09_func-returnMul.py](Mod_3:-Python_Functions_Classes/09_func-returnMul.py): Funciones con retorno de multiples valores y valores por defecto
+## [09_func-returnMul.py](Mod_3_Python_Functions/09_func-returnMul.py): Funciones con retorno de multiples valores y valores por defecto
 
 ### Funciones con Retorno de Múltiples Valores 
 Las funciones pueden retornar múltiples valores, que se pueden almacenar en varias variables.
@@ -532,7 +532,7 @@ print(f"El ancho es: {width}") # Se imprime el valor de la variable width
 print(f"El saludo es: {saludo}") # Se imprime el valor de la variable saludo
 ```
 
-## [10_scope.py](Mod_3:-Python_Functions_Classes/10_scope.py): Alcance de variables o `scope` en Python
+## [10_scope.py](Mod_3_Python_Functions/10_scope.py): Alcance de variables o `scope` en Python
 
 El scope es la visibilidad de una variable dentro de un programa, es decir, en qué partes del programa se puede acceder a una variable o no.
 
@@ -577,7 +577,7 @@ print(f"El nombre es: {name}") # Se imprime el valor de la variable global
 ```
 
 
-## [12_lambda-func.py](Mod_3:-Python_Functions_Classes/12_lambda-func.py): Funciones lamba o anónimas
+## [12_lambda-func.py](Mod_3_Python_Functions/12_lambda-func.py): Funciones lamba o anónimas
 
 Las funciones lambda se definen con la palabra clave `lambda`, seguida de los parámetros y una expresión que constituye el cuerpo de la función.
 
@@ -624,7 +624,7 @@ print(full_name('juan', 'perez'))
 
 
 
-## [13_HOF.py](Mod_3:-Python_Functions_Classes/13_HOF.py): HOF `(Higher Order Functions)` implementando Funciones Declarativas y Funciones Lambda
+## [13_HOF.py](Mod_3_Python_Functions/13_HOF.py): HOF `(Higher Order Functions)` implementando Funciones Declarativas y Funciones Lambda
 
 Son funciones que pueden tomar otras funciones como argumentos o devolver funciones como resultado.
 
@@ -665,7 +665,7 @@ print(result)
 
 
 
-## [14_map-func.py](Mod_3:-Python_Functions_Classes/14_map-func.py): Función `map`
+## [14_map-func.py](Mod_3_Python_Functions/14_map-func.py): Función `map`
 
 La función `map`  es una funcion que recibe como parametro una funcion y un iterable y retorna un objeto map que es un iterador que permite recorrer cada elemento del iterable y aplicarle la funcion que se ingreso como parametro a cada elemento del iterable
 
@@ -718,7 +718,7 @@ print(list3) # Output: [7, 9, 11, 13] debido a que la lista 2 tiene un elemento 
 ```
 
 
-## [15_map-dicts.py](Mod_3:-Python_Functions_Classes/15_map-dicts.py): Función `map` en diccionarios
+## [15_map-dicts.py](Mod_3_Python_Functions/15_map-dicts.py): Función `map` en diccionarios
 
 La función `map` tambien se puede usar en diccionarios
 
@@ -800,7 +800,7 @@ print(items) # Output: [{'product': 'tshirt', 'price': 100}, {'product': 'pants'
 ```
 
 
-## [17_filter-func.py](Mod_3:-Python_Functions_Classes/17_filter-func.py): Función `filter`
+## [17_filter-func.py](Mod_3_Python_Functions/17_filter-func.py): Función `filter`
 
 Esta función incorporada de Python toma dos argumentos, una función y un iterable, y devuelve un iterable con los elementos del iterable original para los que la función devuelve True.
 ### Sintaxis 
@@ -858,7 +858,7 @@ print(len(new_list)) # Output: 2
 ```
 - En este caso en la función filter se retorna los partidos que ganó el equipo local mediante una función lambda y el iterable item
 
-## [18_reduce-func.py](Mod_3:-Python_Functions_Classes/18_reduce-func.py): Función `reduce` y uso de la libreria `functools`
+## [18_reduce-func.py](Mod_3_Python_Functions/18_reduce-func.py): Función `reduce` y uso de la libreria `functools`
 
 El archivo 18_reduce-func.py se centra en la demostración del uso de la función reduce en Python. Esta función permite reducir una lista a un solo valor aplicando una función a cada elemento de la lista.
 
