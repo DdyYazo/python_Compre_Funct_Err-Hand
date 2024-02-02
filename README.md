@@ -32,7 +32,7 @@ Este repositorio es una excelente fuente de información para cualquier persona 
 
 # Estructura de datos 1: Conjuntos `(sets)`
 
-## [01_set.py](Python_Sets-Compren_Classes/01_set.py): Creación y manipulación de conjuntos en Python
+## [01_set.py](Mod_1-2:-Python_Sets-Compren_Classes/01_set.py): Creación y manipulación de conjuntos en Python
 
 Los conjuntos en Python son estructuras de datos que representan una colección de elementos únicos en un orden no garantizado. Se definen de manera similar a las listas y las tuplas, pero en lugar de usar corchetes `[]` o paréntesis `()`, se usan llaves `{}`. 
 
@@ -89,10 +89,10 @@ print(lista)  # Output: ['manzana', 'banana', 'cereza']
 
 Los conjuntos en Python también soportan operaciones matemáticas como la **unión**, **intersección**, **diferencia** y **diferencia simétrica**.
 
-Por ejemplo, en [01_set.py](Python_Sets-Compren_Classes/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
+Por ejemplo, en [01_set.py](Mod_1-2:-Python_Sets-Compren_Classes/01_set.py), se muestra cómo crear un conjunto, agregar elementos a él, y realizar operaciones de conjunto. También se muestra cómo los conjuntos pueden ser utilizados para eliminar duplicados de una lista.
 
 
-## [02_crud-set.py](Python_Sets-Compren_Classes/02_crud-set.py): Operaciones CRUD en conjuntos de Python
+## [02_crud-set.py](Mod_1-2:-Python_Sets-Compren_Classes/02_crud-set.py): Operaciones CRUD en conjuntos de Python
 
 En Python, los conjuntos permiten realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Aquí hay un resumen de los puntos clave:
 
@@ -135,7 +135,7 @@ conjunto.clear()
 ```
 
 
-## [03_set-operations.py](Python_Sets-Compren_Classes/03_set-operations.py): Operaciones de conjuntos en Python
+## [03_set-operations.py](Mod_1-2:-Python_Sets-Compren_Classes/03_set-operations.py): Operaciones de conjuntos en Python
 
 El archivo `03_set-operations.py` demuestra cómo realizar operaciones de conjuntos en Python. Aquí hay un resumen de los puntos clave:
 
@@ -194,7 +194,7 @@ isSuperset = setCountriesA.issuperset(setCountriesB)
 
 # Estructuras de datos 2: Listas `(list)` y Diccionarios `(dict)` con Comprenhentions
 
-## [04_list-compren.py](Python_Sets-Compren_Classes/04_list-compren.py): Comprensión de listas en Python
+## [04_list-compren.py](Mod_1-2:-Python_Sets-Compren_Classes/04_list-compren.py): Comprensión de listas en Python
 
 El archivo `04_list-compren.py` aborda el tema de la comprensión de listas en Python, una característica que permite crear y transformar listas de una manera concisa y legible.
 
@@ -255,7 +255,7 @@ print(numbers_V3
 ```
 
 
-## [05_dict-compren.py](Python_Sets-Compren_Classes/05_dict-compren.py): Comprensión de diccionarios en Python
+## [05_dict-compren.py](Mod_1-2:-Python_Sets-Compren_Classes/05_dict-compren.py): Comprensión de diccionarios en Python
 
 El archivo `05_dict-compren.py` se centra en la comprensión de diccionarios en Python. La comprensión de diccionarios es una forma concisa de crear diccionarios a partir de estructuras de datos existentes.
 
@@ -335,7 +335,7 @@ print(dict3)  # Se imprime el diccionario
 > La primera forma es más eficiente que la segunda para evitar errores de indexación.
 
 
-## [06_dict-compren-condi.py](Python_Sets-Compren_Classes/06_dict-compren-condi.py): Comprensión de diccionarios con condiciones en Python
+## [06_dict-compren-condi.py](Mod_1-2:-Python_Sets-Compren_Classes/06_dict-compren-condi.py): Comprensión de diccionarios con condiciones en Python
 
 En este archivo, exploramos cómo usar la comprensión de diccionarios con condiciones.
 
@@ -393,10 +393,10 @@ print(unique)
 
 
 
-# Funciones y 
+# Funciones en Python y las mas utilizadas
 
 
-## [07_fuctions.py](Python_Functions_Classes/07_fuctions.py): Funciones en Python
+## [07_fuctions.py](Mod_3:-Python_Functions_Classes/07_fuctions.py): Funciones en Python
 
 Son un conjunto de instrucciones que realizan una tarea específica y que pueden ser reutilizadas en cualquier parte del programa.
 
@@ -445,7 +445,7 @@ suma2(10,10)
 > Al tener la lógica en una función evitas tener que escribir la misma lógica una y otra vez, de modo que tienes un código más limpio y más escalable.
 
 
-## [08_func-return.py](Python_Functions_Classes/08_func-return.py): Funciones con retorno de variables
+## [08_func-return.py](Mod_3:-Python_Functions_Classes/08_func-return.py): Funciones con retorno de variables
 
 Son un conjunto de instrucciones que realizan una tarea específica, retornan un valor y pueden ser reutilizadas en cualquier parte del programa.
 
@@ -499,7 +499,7 @@ print(f"El resultado de la suma de los parametros es: {result_2}")
 ```
 
 
-## [09_func-returnMul.py](Python_Functions_Classes/09_func-returnMul.py): Funciones con retorno de multiples valores y valores por defecto
+## [09_func-returnMul.py](Mod_3:-Python_Functions_Classes/09_func-returnMul.py): Funciones con retorno de multiples valores y valores por defecto
 
 ### Funciones con Retorno de Múltiples Valores 
 Las funciones pueden retornar múltiples valores, que se pueden almacenar en varias variables.
@@ -532,7 +532,7 @@ print(f"El ancho es: {width}") # Se imprime el valor de la variable width
 print(f"El saludo es: {saludo}") # Se imprime el valor de la variable saludo
 ```
 
-## [09_func-returnMul.py](Python_Functions_Classes/09_func-returnMul.py): Alcance de variables o `scope` en Python
+## [10_scope.py](Mod_3:-Python_Functions_Classes/10_scope.py): Alcance de variables o `scope` en Python
 
 El scope es la visibilidad de una variable dentro de un programa, es decir, en qué partes del programa se puede acceder a una variable o no.
 
@@ -577,6 +577,355 @@ print(f"El nombre es: {name}") # Se imprime el valor de la variable global
 ```
 
 
+## [12_lambda-func.py](Mod_3:-Python_Functions_Classes/12_lambda-func.py): Funciones lamba o anónimas
+
+Las funciones lambda se definen con la palabra clave `lambda`, seguida de los parámetros y una expresión que constituye el cuerpo de la función.
+
+### Sintaxis 
+
+```python
+ lambda argumentos: expresion
+```
+En donde:
+- `lambda`: es la palabra reservada para indicar que es una funcion lambda
+- `argumentos`: son los parametros que recibe la funcion, estos son opcionales
+- `expresion`: es el cuerpo de la funcion, es decir, lo que hace la funcion 
+
+### Uso de Funciones Lambda
+Las funciones lambda son útiles cuando se quiere crear una función que se va a usar una sola vez.
+
+### Función declarativa vs Función Lambda
+<p align="center">
+  <img src="https://i.postimg.cc/ncpXBkwm/imagen-2024-01-24-171139328.png" alt="Aquí va el texto del enlace">
+</p>
+
+### Función declarativa
+```python
+ def increment(n):
+    return n + 1
+
+result = increment(10)
+print(result)
+### En este caso una función declarativa requiere mas lineas de codigo que una función lambda
+```
+
+### Función lambda
+```python
+## Crear una lambda que devuelve el nombre completo
+full_name = lambda first, last: f'The fullname is {first.title()} {last.title()}'
+
+print(full_name('juan', 'perez'))
+```
+- La sintaxis de la lambda es la misma que la de una funcion pero en este caso se compone por:
+1. `full_name`: es el nombre de la funcion
+2. `lambda`: es la palabra reservada para indicar que es una funcion lambda
+3. `first, last`: son los parametros de la funcion
+4. `f'The fullname is {first.title()} {last.title()}'`: es el cuerpo de la funcion, es decir, lo que hace la funcion, utilizando la función title() para poner la primera letra en mayuscula
 
 
 
+## [13_HOF.py](Mod_3:-Python_Functions_Classes/13_HOF.py): HOF `(Higher Order Functions)` implementando Funciones Declarativas y Funciones Lambda
+
+Son funciones que pueden tomar otras funciones como argumentos o devolver funciones como resultado.
+
+### Funciones declarativas que reciben como paramatro una función
+```python
+def increment(n): # Esta funcion recibe como parametro un numero
+    return n + 1 # Esta funcion retorna el numero ingresado mas 1
+
+def high_order_function(x, func): # Esta funcion recibe como parametro un numero y una funcion
+    return x + func(x) # Esta funcion retorna el numero ingresado mas el resultado de la funcion que se ingreso como parametro
+
+result = high_order_function(2, increment) # Esta funcion retorna el numero 2 mas el resultado de la funcion increment y no es neceario ejecutar la funcion increment sino definirla como parametro
+print(result) # Output: operacion 2 + (2 + 1) = 5
+```
+
+### Función que Retorna Otra Función Utilizando Funciones Lambda
+```python
+increment_V2 = lambda x : x + 1 # Esta lambda permite hacer lo mismo que la funcion increment sin necesidad de definir una función usando def o declarar su retorno con return
+
+high_order_function_V2 = lambda x, func: x + func(x) # Emplea el mismo comportamiento que la función declarativa
+
+result = high_order_function_V2(2, increment_V2) # 
+print(result) # la salida seria la operacion 2 + (2 + 1) = 5 
+```
+
+### Declarar Lambdas Directamente al Designar los Argumentos de una Función
+```python
+## Primero es necesario definir la función inicial como lambda
+high_order_function_V2 = lambda x, func: x + func(x) # Esta funcion recibe como parametro un numero y una funcion y retorna el numero ingresado mas el resultado de la funcion que se ingreso como parametro
+result = high_order_function_V2(2, lambda x: x + 1) # Al declararse la variable permite establecer como parametro una función lambda
+print(result)
+```
+
+# Funciones más utilizadas en Python y su comportamiento
+<p align="center">
+  <img src="https://i.postimg.cc/h4sX8YQB/imagen-2024-01-24-181612046.png" alt="Aquí va el texto del enlace">
+</p>
+
+
+
+## [14_map-func.py](Mod_3:-Python_Functions_Classes/14_map-func.py): Función `map`
+
+La función `map`  es una funcion que recibe como parametro una funcion y un iterable y retorna un objeto map que es un iterador que permite recorrer cada elemento del iterable y aplicarle la funcion que se ingreso como parametro a cada elemento del iterable
+
+### Sintaxis 
+
+```python
+  map(funcion, iterable)
+```
+En donde:
+- `map`: es la palabra reservada para indicar que es una funcion map
+- `funcion`: es la funcion que se va a aplicar a cada elemento del iterable
+- `iterable`: es el iterable que se va a recorrer
+
+### Ejemplo contextual para las función `map`
+```python
+numbers = [2, 4, 6, 8, 10] # Se crea una lista con numeros
+numbers_plus_one = [] # Se crea una lista vacia
+for number in numbers: # Se recorre la lista numbers
+    numbers_plus_one.append(number * 2) # Se agrega a la lista numbers_plus_one el numero de la lista numbers multiplicado por 2
+print(numbers) # Output: [2, 4, 6, 8, 10]
+print(numbers_plus_one) # Output: [4, 8, 12, 16, 20]
+```
+
+>[!NOTE]
+>
+> ### Utilidad de las Función `map` para un codigo mas legible
+>
+> La función map es una de las funciones más utilizadas en Python, ya que permite aplicar una función a cada elemento de un iterable (lista, tupla, etc.) y retornar un iterador para recorrer los resultados y permite reducir el código y hacerlo más legible utilizando ademas funciones lambda.
+
+### Implementación de la función `map`
+```python
+# Ejemplo de la funcion map usando una función lambda en una sola linea
+numbersv3 = map(lambda number: number * 2, numbers) # Se crea un objeto map que incorpora la funcion lambda que multiplica por 2 cada numero de la lista numbers
+print(numbersv3) # Output: <map object at 0x7f1d9f7d7a90>
+list_numbersv3 = list(numbersv3) # Se convierte el objeto map en una lista
+print(list_numbersv3) # Output: [4, 8, 12, 16, 20]
+```
+
+### Ejemplo donde se reemplaza los valores iniciales de una lista por los de otra lista 
+En algunos casos una lista puede tener una longitud de datos mayor que otra para ello el output se tomara de la lista con menor cantidad
+```python
+list1 = [1, 2, 3, 4, 5]# Se crea una lista con numeros
+list2 = [6, 7, 8, 9] # Se crea una lista con numeros
+list3 = map(lambda a, b: a + b, list1, list2) # Se crea un objeto map que incorpora la funcion lambda que suma los valores de las dos listas
+print(list1) # Output: [1, 2, 3, 4, 5]
+print(list2) # Output: [6, 7, 8, 9]
+print(list3) # Output: <map object at 0x7f1d9f7d7a90>
+list3 = list(list3) # Se convierte el objeto map en una lista
+print(list3) # Output: [7, 9, 11, 13] debido a que la lista 2 tiene un elemento menos que la lista 1 el resultado es una lista con 4 elemen
+```
+
+
+## [15_map-dicts.py](Mod_3:-Python_Functions_Classes/15_map-dicts.py): Función `map` en diccionarios
+
+La función `map` tambien se puede usar en diccionarios
+
+### Implementación de función `map` en dictionarys 
+Para este ejemplo primero se crea una lista con varios diccionarios 
+```python
+items = [
+    {
+     'product': 'laptop',
+     'price': 800,
+     },
+    {
+        'product': 'mouse',
+        'price': 40,
+    },
+    {
+        'product': 'monitor',
+        'price': 400,
+    }
+]
+```
+
+1. Para el primer caso se desea solo imprimir una lista de precios utilizando la función map y el método list
+```python
+prices = list(map(lambda item: item['price'], items)) # Se crea un objeto map que incorpora la funcion lambda que retorna los precios de los productos del diccionario items
+print(prices) # Output: [800, 40, 400]
+```
+
+2. Ahora para el segundo caso, se desea agregar un nuevo campo que calcule el impuesto de los precios, lo cual no basta con declararlo en una sola linea sino que se debe definir una función que retorne la operación
+```python
+# 1. Crear una funcion que calcule el impuesto
+def add_taxes(item):
+    item['taxes'] = item['price'] * 0.8
+    return item
+
+# 2. Definir la funcion en la funcion map
+new_item = list(map(add_taxes, items)) # Se crea un objeto map que incorpora la funcion add_taxes que retorba todos los items del diccionario items con el impuesto
+
+print(new_item) # Output: [{'product': 'laptop', 'price': 800, 'impuesto': 640.0}, {'product': 'mouse', 'price': 40, 'impuesto': 32.0}, {'product': 'monitor', 'price': 400, 'impuesto': 320.0}]
+```
+
+> [!WARNING]
+> 
+> ### Condiciones a tener en cuenta cuando se implementa `map` en diccionarios
+>
+> El utilizar estas funciones se debe tener precación debido a que puede generar un cambio en el array original lo que puede ocasionar problemas en el codigo o errores de logica, entonces para solucionar ello se puede utilizar la biblioteca copy para crear una copia del array original y no modificarlo o otro logica que evite esta excepción
+
+- Antes de crear la función map donde se desea crear un nuevo campo se puede generar una copia en memoria del array original mediante la libreria copy
+```python
+# 1. Importar la biblioteca copy
+import copy
+# 2. Crear una copia del array original
+
+## Primer modo de crear una copia del array original
+items_cp = copy.copy(items)
+print(items_cp) # Output: [{'product': 'laptop', 'price': 800}, {'product': 'mouse', 'price': 40}, {'product': 'monitor', 'price': 400}]
+
+## Segundo modo de crear una copia del array original
+items_copy = copy.deepcopy(items)
+print(items_copy) # Output: [{'product': 'laptop', 'price': 800}, {'product': 'mouse', 'price': 40}, {'product': 'monitor', 'price': 400}]
+
+## Resto del codigo donde se crea la función map
+```
+
+### Diferencia entre `copy` y `deepcopy`
+Con respecto al ejemplo anterior al generar una copia del array original con `copy` solo crea una copia superficial del array original, mientras que `deepcopy` crea una copia profunda del array original, es decir, si el array original tiene un array dentro de otro array entonces deepcopy crea una copia de cada array
+
+### Alternativa a copy con otra forma mediante la función `map`
+De otro modo tambien se puede añadir una nueva clave valor sin afectar el array original, directamente en la linea del map de la siguiente manera
+```python
+
+# --------------- Codigo donde esta declarado el diccionario
+
+# Se puede usar la expresión **nombreDeLaVar para obtener un nuevo diccionario con los mismos elementos del diccionario original
+newItems = map(lambda item: {**item, 'tax': item['price'] * .19}, items) # Se crea un objeto map que incorpora la funcion lambda la cual a su vez usa **[NombreDeLaVaria] que en este caso es "item" para desempaquetar el diccionario item y agregarle un nuevo campo llamado tax que es el impuesto del producto
+
+print(list(newItems)) # Output: [{'product': 'tshirt', 'price': 100, 'tax': 19.0}, {'product': 'pants', 'price': 300, 'tax': 57.0}, {'product': 'blue white pants', 'price': 200, 'tax': 38.0}]
+print(items) # Output: [{'product': 'tshirt', 'price': 100}, {'product': 'pants', 'price': 300}, {'product': 'blue white pants', 'price': 200}]
+```
+
+
+## [17_filter-func.py](Mod_3:-Python_Functions_Classes/17_filter-func.py): Función `filter`
+
+Esta función incorporada de Python toma dos argumentos, una función y un iterable, y devuelve un iterable con los elementos del iterable original para los que la función devuelve True.
+### Sintaxis 
+
+```python
+filter(función, iterable)
+```
+En donde:
+- `función`: es una función que retorna un valor booleano
+- `iterable`: es una lista o diccionario
+
+### Función `filter` en listas
+
+ ```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # Lista de números
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) # 
+print(even_numbers) # output: [2, 4, 6, 8, 10]
+print(numbers) # output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]```
+```
+- En este caso en la función filter se retorna los números  pares de la lista mediante una función lambda filtrada por la función filter en formato de lista
+
+### Función `filter` en diccionarios
+
+ ```python
+matches = [
+  {
+    'home_team': 'Bolivia',
+    'away_team': 'Uruguay',
+    'home_team_score': 3,
+    'away_team_score': 1,
+    'home_team_result': 'Win'
+  },
+  {
+    'home_team': 'Brazil',
+    'away_team': 'Mexico',
+    'home_team_score': 1,
+    'away_team_score': 1,
+    'home_team_result': 'Draw'
+  },
+  {
+    'home_team': 'Ecuador',
+    'away_team': 'Venezuela',
+    'home_team_score': 5,
+    'away_team_score': 0,
+    'home_team_result': 'Win'
+  },
+] # Esta lista de diccionarios muestra los resultados de los partidos de futbol
+print(f'Lista original: {matches} ') 
+print(len(matches)) # Output: 3
+print('\n')
+## Ahora se desea filtrar una lista con solo los partidos que ganó el equipo local
+new_list = list(filter(lambda item: item['home_team_result'] == 'Win', matches))
+print(f'Lista nueva: {new_list}') 
+print(len(new_list)) # Output: 2
+```
+- En este caso en la función filter se retorna los partidos que ganó el equipo local mediante una función lambda y el iterable item
+
+## [18_reduce-func.py](Mod_3:-Python_Functions_Classes/18_reduce-func.py): Función `reduce` y uso de la libreria `functools`
+
+El archivo 18_reduce-func.py se centra en la demostración del uso de la función reduce en Python. Esta función permite reducir una lista a un solo valor aplicando una función a cada elemento de la lista.
+
+### Sintaxis
+La sintaxis de la función reduce es la siguiente:
+```python
+reduce(función, iterable)
+```
+Donde:
+- `función`: es una función que toma dos argumentos, el acumulador y el elemento actual, y devuelve un nuevo valor para el acumulador.
+- `iterable`: es una lista o diccionario.
+
+### Importación de la libreria `functools`
+La función reduce no está disponible por defecto en Python, por lo que es necesario importarla del módulo functools.
+
+
+### Función `reduce` en listas
+- En este ejemplo, se utiliza la función reduce con una función lambda para sumar todos los números en una lista.
+```python
+# Importamos la función reduce del módulo functools
+import functools
+
+# Definimos una lista de números
+numbers = [1, 2, 3, 4, 5]
+
+# Utilizamos reduce con una función lambda para sumar todos los números en la lista
+result = functools.reduce(lambda counter, item: counter + item, numbers) # Retorna la suma de los elementos de la lista que a diferencia de filter y map no retorna una lista sino un solo valor
+
+# Imprimimos el resultado
+print(result) # Output: 15
+```
+
+### Función `reduce` en diccionarios
+
+- En este ejemplo, se utiliza la función reduce con una función lambda para sumar los goles de los partidos de fútbol en una lista de diccionarios. Retornando la suma de los goles de los partidos tanto de local como de visitante
+```python
+# Importamos la función reduce del módulo functools
+import functools
+
+# Definimos una lista de diccionarios que representan partidos de fútbol
+matches = [
+    {
+        'home_team': 'Bolivia',
+        'away_team': 'Uruguay',
+        'home_team_score': 3,
+        'away_team_score': 1,
+        'home_team_result': 'Win'
+    },
+    {
+        'home_team': 'Brazil',
+        'away_team': 'Mexico',
+        'home_team_score': 1,
+        'away_team_score': 1,
+        'home_team_result': 'Draw'
+    },
+    {
+        'home_team': 'Ecuador',
+        'away_team': 'Venezuela',
+        'home_team_score': 5,
+        'away_team_score': 0,
+        'home_team_result': 'Win'
+    },
+]
+
+# Utilizamos reduce con una función lambda para sumar los goles de los partidos de fútbol
+total_goals = functools.reduce(lambda counter, item: counter + item['home_team_score'] + item['away_team_score'], matches, 0) # El 0 es el valor inicial de la variable counter
+
+# Imprimimos el resultado
+print(total_goals) # Output: 11
+```
