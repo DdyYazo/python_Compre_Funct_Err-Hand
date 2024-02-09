@@ -25,3 +25,9 @@ print(result) # Al imprimirlo se puede ver que se crea un diccionario con los pa
 text = "Hi, my name is Juan and I am a software developer"
 unique = { character: character.upper() for character in text if character in "aeiou"} # En este ejemplo se emplea la funcion upper para que las vocales aparezcan en mayuscula y se agrega la condicion de que solo se agreguen las vocales al diccionario unique
 print(unique) # Al imprimirlo se puede ver que se crea un diccionario con las vocales y la cantidad de veces que aparecen en el texto
+
+text = "Hi, my namE is Juan and I am a software developer"
+
+# Crea un diccionario de comprensión que cuenta las ocurrencias de cada vocal en el texto, solo si la vocal aparece en el texto
+character_count = {character: text.lower().count(character) for character in 'aeiou' if text.lower().count(character) > 0} # Se incluye una condición para solo agregar las vocales al diccionario si aparecen en el texto (es decir, su conteo es mayor a 0).
+print(character_count)

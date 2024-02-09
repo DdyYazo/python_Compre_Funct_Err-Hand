@@ -30,7 +30,7 @@ Este repositorio es una excelente fuente de información para cualquier persona 
 
 
 
-# Estructura de datos 1: Conjuntos `(sets)`
+# Módulo 1: Estructura de datos p1: Conjuntos `(sets)`
 
 ## [01_set.py](Mod_1_2_Python_Sets_Compren/01_set.py): Creación y manipulación de conjuntos en Python
 
@@ -192,7 +192,7 @@ isSuperset = setCountriesA.issuperset(setCountriesB)
 
 
 
-# Estructuras de datos 2: Listas `(list)` y Diccionarios `(dict)` con Comprenhentions
+# Módulo 2: Estructuras de datos p2: Listas `(list)` y Diccionarios `(dict)` con Comprenhentions
 
 ## [04_list-compren.py](Mod_1_2_Python_Sets_Compren/04_list-compren.py): Comprensión de listas en Python
 
@@ -384,7 +384,7 @@ print(unique)
 ```
 > [!IMPORTANT]
 >
-> **En el siguiente modulo se exploran las funciones con el fin de profundizar mas acerca de los diccionarios con condicionales**
+> **En el siguiente Módulo se exploran las funciones con el fin de profundizar mas acerca de los diccionarios con condicionales**
 
 
 ## Diferencias entre `List` vs `Tuples` vs `Sets`
@@ -393,10 +393,10 @@ print(unique)
 
 
 
-# Funciones en Python y las mas utilizadas
+# Módulo 3: Funciones en Python (Las mas utilizadas y sus diferencias)
 
 
-## [07_fuctions.py](Mod_3_Python_Functions/07_fuctions.py): Funciones en Python
+## [07_fuctions.py](Mod_3_Python_Functions/07_fuctions.py): Funciones `def` en Python
 
 Son un conjunto de instrucciones que realizan una tarea específica y que pueden ser reutilizadas en cualquier parte del programa.
 
@@ -577,7 +577,7 @@ print(f"El nombre es: {name}") # Se imprime el valor de la variable global
 ```
 
 
-## [12_lambda-func.py](Mod_3_Python_Functions/12_lambda-func.py): Funciones lamba o anónimas
+## [12_lambda-func.py](Mod_3_Python_Functions/12_lambda-func.py): Funciones `lamba` o anónimas
 
 Las funciones lambda se definen con la palabra clave `lambda`, seguida de los parámetros y una expresión que constituye el cuerpo de la función.
 
@@ -640,7 +640,7 @@ result = high_order_function(2, increment) # Esta funcion retorna el numero 2 ma
 print(result) # Output: operacion 2 + (2 + 1) = 5
 ```
 
-### Función que Retorna Otra Función Utilizando Funciones Lambda
+### Función que Retorna Otra Función Utilizando Funciones `Lambda`
 ```python
 increment_V2 = lambda x : x + 1 # Esta lambda permite hacer lo mismo que la funcion increment sin necesidad de definir una función usando def o declarar su retorno con return
 
@@ -858,7 +858,7 @@ print(len(new_list)) # Output: 2
 ```
 - En este caso en la función filter se retorna los partidos que ganó el equipo local mediante una función lambda y el iterable item
 
-## [18_reduce-func.py](Mod_3_Python_Functions/18_reduce-func.py): Función `reduce` y uso de la libreria `functools`
+## [18_reduce-func.py](Mod_3_Python_Functions/18_reduce-func.py): Función `reduce` y uso de la libreria `functools` con el Módulo `reduce`
 
 El archivo 18_reduce-func.py se centra en la demostración del uso de la función reduce en Python. Esta función permite reducir una lista a un solo valor aplicando una función a cada elemento de la lista.
 
@@ -925,7 +925,30 @@ matches = [
 
 # Utilizamos reduce con una función lambda para sumar los goles de los partidos de fútbol
 total_goals = functools.reduce(lambda counter, item: counter + item['home_team_score'] + item['away_team_score'], matches, 0) # El 0 es el valor inicial de la variable counter
-
+****
 # Imprimimos el resultado
 print(total_goals) # Output: 11
 ```
+
+> [!NOTE]
+> 
+> # La diferencia entre una función `def` y una función `lambda` en cuanto a su legibilidad y mantenibilidad
+>
+> - `def` se utiliza para definir funciones normales. Pueden tener cualquier número de argumentos y cualquier cantidad de código dentro de ellas. También pueden tener un nombre, lo que permite reutilizarlas en diferentes partes del código.
+> 
+> - `lambda` se utiliza para definir funciones anónimas pequeñas. Estas funciones son de una sola línea y no tienen un nombre. Son útiles cuando necesitas una función pequeña para una operación única, como pasarla como argumento a funciones como `map()`, `filter()`, etc.
+> ### En términos de mantenibilidad:
+> - Las funciones `def` son más fáciles de leer y mantener, especialmente para funciones más largas y complejas. Pueden tener un nombre, lo que facilita la comprensión de su propósito. También pueden tener documentación a través de docstrings.
+> 
+> - Las funciones `lambda` son útiles para operaciones simples y de una sola línea, pero pueden ser difíciles de leer y mantener si se utilizan para operaciones más complejas. No pueden tener un nombre ni docstrings, lo que puede hacer que sea más difícil entender su propósito.
+
+>[!IMPORTANT]
+> 
+> En resumen, si estás escribiendo una función más larga y compleja que se utilizará en varias partes de tu código, probablemente deberías usar `def`. 
+> 
+> Por otro lado, si solo necesitas una función simple para una operación única, `lambda` puede ser una buena opción.
+
+
+
+
+# Módulo 4: Módulos en Python
