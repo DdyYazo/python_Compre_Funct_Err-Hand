@@ -378,8 +378,8 @@ result ={country: population for (country, population) in population_V2.items() 
 # 
 text = "Hi, my name is Juan and I am a software developer"
 # 
-unique = { character: character.upper() for character in text if character in "aeiou"}
-# Al imprimirlo se puede ver que se crea un diccionario con las vocales y la cantidad de veces que aparecen en el texto
+character_count = {character: text.lower().count(character) for character in 'aeiou' if text.lower().count(character) > 0} # Se incluye una condición para solo agregar las vocales al diccionario si aparecen en el texto (es decir, su conteo es mayor a 0).
+print(character_count)
 print(unique)
 ```
 > [!IMPORTANT]
@@ -952,3 +952,227 @@ print(total_goals) # Output: 11
 
 
 # Módulo 4: Módulos en Python
+
+## 1. ¿Que son los modulos?
+> [!IMPORTANT]
+> 
+> Los modulos **son archivos que contienen un conjunto de funciones que pueden ser importadas y utilizadas en otros programas.** 
+> - Estos por otro lado tambien pueden ser considerados como todo archivo con la extensión `.py` donde se pueden definir funciones, clases o variables. 
+> 
+> Es por ello que **los modulos son una forma de organizar y reutilizar código.**
+
+### 1.1 Modulos por defecto en Python y los mas utilizados
+- `random`: Genera números aleatorios.
+```python
+from random import randint
+print(randint(1, 10))  # Imprime un número aleatorio entre 1 y 10
+```
+- `os`: Proporciona funciones para interactuar con el sistema operativo.
+```python
+import os
+print(os.getcwd())  # Imprime el directorio de trabajo actual
+```
+- `sys`: Proporciona acceso a algunas variables utilizadas o mantenidas por el intérprete de Python.
+```python
+import sys
+print(sys.version)  # Imprime la versión de Python
+```
+- `re`: Proporciona funciones para trabajar con expresiones regulares.
+```python
+import re
+print(re.match(r'\d+', '123abc'))  # Busca uno o más dígitos al principio de la cadena
+```
+- `time`: Proporciona funciones para trabajar con tiempos y fechas.
+```python
+import time
+print(time.time())  # Imprime el tiempo actual en segundos desde la época
+```
+- `collections`: Implementa tipos de contenedores especializados que proporcionan alternativas a los contenedores generales de Python.
+```python
+from collections import Counter
+numbers = [1, 1, 2, 1, 2, 1, 4, 5, 3, 3, 21]
+counter = Counter(numbers) # Retorna un diccionario con el conteo de cada elemento de la lista
+print(counter) # output: Counter({1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1})
+```
+- `datetime`: Proporciona clases para manipular fechas y horas.
+```python
+from random import randint
+print(randint(1, 10))  # Imprime un número aleatorio entre 1 y 10
+```
+- `math`: Proporciona funciones matemáticas.
+```python
+import math
+print(math.sqrt(16))  # Imprime la raíz cuadrada de 16
+```
+- `json`: Proporciona funciones para trabajar con datos JSON.
+```python
+import json
+print(json.dumps({"name": "John", "age": 30}))  # Convierte un diccionario a una cadena JSON
+```
+- `csv`: Proporciona funciones para leer y escribir archivos CSV.
+```python
+import csv
+with open('file.csv', 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)  # Imprime cada fila del archivo CSV
+```
+
+
+
+## [20_modules-app](20_modules-app): ¿Como construir modulos en Python?
+Para construir módulos debemos tener en cuenta que se deben crear en la misma carpeta a lo cual utilizaremos `import` para ser llamada en el archivo a trabajar
+
+> [!TIP] 
+> 
+> Una buena practica para nombrar archivos que se consideran modulos es nombrandolos como `utils.py`, `helpers.py`, etc. lo que permitira que otros programadores sepan que son modulos que contienen funciones que pueden ser reutilizadas en otros programas del mismo archivo.
+
+> [!IMPORTANT] 
+> 
+> Ademas normalmente los archivos que  tienen utilidades solo manejan funciones para que no se mezclen con las variables y clases de otros archivos.
+
+### Sintaxis
+Para poder usar las funciones y variables definidas en un módulo se emplea la siguiente sintaxis 
+```python
+from nombre_modulo import (nombre_funcion, nombre_variable)
+```
+**Donde**:
+- `función`: es una función que toma dos argumentos, el acumulador y el elemento actual, y devuelve un nuevo valor para el acumulador.
+- `iterable`: es una lista o diccionario.
+- `nombre_modulo` es el nombre del archivo sin la extensión .py
+- `nombre_funcion` es el nombre de la función que se va a importar
+- `nombre_variable` es el nombre de la variable que se va a importar
+"""
+
+### Renombrar un modulo o una función al importarla
+- **Para los modulos es**:
+```python
+import nombre_modulo as nuevo_nombre 
+```
+- **Para las funciones o variables** 
+```python
+from nombre_modulo import nombre_funcion as nuevo_nombre
+```
+### Ejemplos de Funciones y Variables importadas de un `modulo.py`
+#### 1 Funciones Importadas
+1. Para este ejemplo se define una función que puede ser reutilizada en otros programas.
+   
+   - La función `get_population()` retorna dos listas, una con las llaves y otra con los valores que se van a emplear en el diccionario
+   ```python
+    def get_population():
+
+        keys = ["col", "arg"]
+        values = ["col", "arg"]
+        return keys, values
+
+    ```
+
+    - La forma de llamarlo desde otro archivo se estableceria de la siguiente manera
+   ```python
+    import utils_1 as u  # De este modo se importa el módulo utils.py y se le asigna el nombre u
+    keys, values = (
+        u.get_population()
+    )  # De este modo se importa la función get_population() del módulo utils.py y se asigna a las variables keys y values
+    print(keys, values)
+    ```
+
+2. Otro ejemplo de una función de una población basado en un pais llamada `population_by_country()` que utiliza una lambda function para filtrar los paises de la lista de diccionarios data y retorna el pais y su población 
+
+   ```python
+    def population_by_country(data, country):
+    result = list(filter(lambda item: item['Country'] == country, data))
+    return result
+    ```
+
+   - Para hacer uso de esta función se debe definir una lista de diccionarios con la población de varios países 
+   ```python
+    data = [
+    {"Country": "Colombia", "Population": 502},
+    {"Country": "Argentina", "Population": 400},
+    {"Country": "Peru", "Population": 300},
+    {"Country": "Mexico", "Population": 700},
+    ] 
+    result = u.population_by_country(
+        data, "Colombia"
+    )  # La variable result almacena el resultado de la función population_by_country() del módulo utils.py y solo se le pasa el país "Colombia" junto con su población
+    print(result)  # Output: [{'Country': 'Colombia', 'Population': 502}] # Se imprime el resultado de la función population_by_country() del módulo utils.py
+    ```
+    - Para solo hacer el llamado de la función basta con declarar la sintaxis `from...import`
+   ```python
+    import utils_1 as u  # De este modo se importa el módulo utils.py y se le asigna el nombre u
+    keys, values = (
+        u.get_population()
+    )  # De este modo se importa la función get_population() del módulo utils.py y se asigna a las variables keys y values
+    print(keys, values)
+    ```
+
+
+#### 2 Variables Importadas
+3. Al igual que las funciones las variables definidas en un módulo pueden ser reutilizadas en otros programas.
+   
+   - **Ejemplo**
+   ```python
+    A = 'Hola'
+    ```
+    - Para llamarla solo se importa la libreria 
+   ```python
+    print(u.A)  # De este modo se imprime la variable A del módulo mod.py
+    ```
+
+
+
+## [21_scripts_modules](21_scripts_modules): ¿Que son y como utilizar los Scripts de modulos en Python?
+
+### ¿Que son los Scripts en Python?
+Los scripts de Python son programas que se pueden ejecutar directamente por el intérprete de Python sin necesidad de ser compilados previamente. Esto es posible gracias a la naturaleza interpretada de Python donde comienza toda la ejecución de un programa que se le denomina `"entry point"`.
+
+> [!IMPORTANT]
+> 
+> ### ¿Que es el punto de entrada `entry point`?
+>
+> En Python, el punto de entrada suele ser una línea que se ve así:
+> ```python
+> if `__name__` == `"__main__":`
+>    main() # Corresponde al nombre de la función
+> ```
+> - Aquí, `main()` es una función definida por el usuario que contiene el código que se ejecutará cuando se inicie el programa.
+> 
+> - La condición `if `__name__` == `"__main__":`` se cumple cuando el script se ejecuta directamente. Esto se debe a que cuando Python ejecuta un archivo directamente, establece la variable especial ``__name__`` en "``__main__``".
+> 
+> - Si el archivo se importa como un módulo en otro script, ``__name__`` se establece en el nombre del archivo, por lo que el código bajo la condición `if `__name__` == `"__main__"`:` no se ejecuta. 
+
+> [!NOTE]
+> 
+> Esto es útil cuando quieres que ciertas partes de tu código solo se ejecuten cuando el archivo se ejecute directamente, y no cuando se importe como un módulo.
+
+### Ejemplo practico para comprender el comportamiento de los scripts en Python
+
+- Imagina que tienes dos archivos de Python: `main.py` y `module.py`.
+
+    - El archivo `module.py` contiene lo siguiente:
+    ```python
+    def hello():
+        print("Hola desde module.py!")
+
+    if `__name__` == `"__main__":`
+        print("module.py se está ejecutando directamente")
+    else:
+        print("module.py se ha importado como un módulo")
+    ```
+    - Y el archivo `main.py` contiene lo siguiente:
+    ```python
+    import module
+
+    module.hello()
+    ```
+- Si ejecutas `module.py` directamente desde la línea de comandos con `python module.py`, verás lo siguiente:
+    ```python
+    module.py se está ejecutando directamente
+    ```
+    - Esto se debe a que `__name__` es `"__main__"` cuando ejecutas `module.py` directamente, por lo que el código dentro del bloque if `__name__` == `"__main__":` se ejecuta.
+- Por otro lado, si ejecutas `main.py` con `python main.py`, verás lo siguiente:
+     ```python
+    module.py se ha importado como un módulo
+    Hola desde module.py!
+    ```
+    - Esto se debe a que `module.py` se importa como un módulo en `main.py`, por lo que `__name__` no es `"__main__"` en `module.py`. Como resultado, el código dentro del bloque `if __name__ == "__main__":` no se ejecuta, pero la función hello que se llama en `main.py` sí se ejecuta.
