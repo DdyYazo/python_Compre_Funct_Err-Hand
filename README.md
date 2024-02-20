@@ -1169,10 +1169,105 @@ Los scripts de Python son programas que se pueden ejecutar directamente por el i
     ```python
     module.py se está ejecutando directamente
     ```
-    - Esto se debe a que `__name__` es `"__main__"` cuando ejecutas `module.py` directamente, por lo que el código dentro del bloque if `__name__` == `"__main__":` se ejecuta.
+    - Esto se debe a que `__name__` es `"__main__"` cuando ejecutas `module.py` directamente, por lo que el código dentro del bloque `if __name__ == "__main__":` se ejecuta.
 - Por otro lado, si ejecutas `main.py` con `python main.py`, verás lo siguiente:
      ```python
     module.py se ha importado como un módulo
     Hola desde module.py!
     ```
     - Esto se debe a que `module.py` se importa como un módulo en `main.py`, por lo que `__name__` no es `"__main__"` en `module.py`. Como resultado, el código dentro del bloque `if __name__ == "__main__":` no se ejecuta, pero la función hello que se llama en `main.py` sí se ejecuta.
+
+
+
+## [22_mi_paquete](mi_paquete_22): ¿Que son y como utilizar los Paquetes `pkg` de modulos en Python?
+
+Los paquetes en Python son una forma de organizar módulos relacionados en un directorio. Un paquete es simplemente un directorio que contiene uno o más archivos `.py`, junto con un archivo especial llamado `__init__.py`.
+
+El archivo `__init__.py` es necesario para que Python reconozca el directorio como un paquete. Este archivo puede estar vacío, o puede contener código válido de Python. A menudo se utiliza para realizar inicializaciones necesarias para el paquete, o para definir una API específica para el paquete.
+
+### Ejemplo de cómo estructurar un paquete:
+
+```python
+mi_paquete/
+    __init__.py
+    modulo1.py
+    modulo2.py
+```
+
+En este caso, `mi_paquete` es un paquete que contiene dos módulos: `modulo1` y `modulo2`. Puedes importar estos módulos con la siguiente sintaxis:
+
+```python
+from mi_paquete import modulo1, modulo2
+```
+
+O puedes importar funciones o clases específicas de los módulos:
+
+```python
+from mi_paquete.modulo1 import mi_funcion
+```
+
+El archivo `__init__.py` también puede decidir qué módulos se importan por defecto cuando importas el paquete. Por ejemplo, si `__init__.py` contiene la siguiente línea:
+
+```python
+from . import modulo1
+```
+
+Entonces, cuando importas `mi_paquete`, `modulo1` se importará automáticamente:
+
+```python
+import mi_paquete  # Esto importará mi_paquete.modulo1 automáticamente junto con sus funciones o variables declaradas
+```
+
+Los paquetes son una característica importante de Python que te permite organizar tu código de manera más efectiva. Te permiten agrupar módulos relacionados juntos, lo que puede hacer que tu código sea más fácil de entender y mantener.
+
+### Paquetes regulares `(regular packages)` y Paquetes de espacio de nombres `(namespaces packages)`
+
+El tipo de paquete que contiene un archivo `__init__.py` se conoce comúnmente como un "paquete regular" o simplemente un "paquete" en Python.
+
+El archivo `__init__.py` es lo que distingue a un paquete de un directorio normal. Este archivo puede estar vacío, pero debe estar presente para que Python reconozca el directorio como un paquete.
+
+> [!NOTE]
+> 
+> **A partir de Python 3.3, también se introdujo el concepto de "paquetes de espacio de nombres", que son paquetes que no requieren un archivo` __init__.py`. Sin embargo, los paquetes regulares con un archivo `__init__.py` son todavía muy comunes y ampliamente utilizados.**
+
+### Diferencia entre `regular pkg` y `namespaces pkg`
+En Python, existen dos tipos de paquetes para organizar módulos relacionados: "Regular Packages" y "Namespace Packages".
+
+**Regular Packages**: Son directorios que contienen un archivo `__init__.py`(que puede estar vacio) y uno o más archivos de módulo Python. Python reconoce estos directorios como paquetes regulares. El archivo `__init__.py` se ejecuta al importar el paquete y puede contener cualquier código Python, a menudo utilizado para inicializar el paquete.
+- **Por ejemplo:**
+```python
+mi_paquete/
+    __init__.py
+    modulo1.py
+    modulo2.py
+```
+
+**Namespace Packages**: Introducidos en Python 3.3, son similares a los paquetes regulares pero no requieren un archivo `__init__.py`. Esto permite que múltiples directorios diferentes contribuyan a un mismo paquete.
+
+- **Por ejemplo, si tienes los siguientes directorios en tu sys.path:**
+```python
+dir1/
+    mi_paquete/
+        modulo1.py
+
+dir2/
+    mi_paquete/
+        modulo2.py
+```
+
+Python fusionará estos directorios en un único paquete de espacio de nombres `mi_paquete`.
+> [!TIP]
+> 
+> #### Buena practica de emplear el namespace en python
+> - **Ejemplo**
+> ```python
+> print(mi_paquete.mod_1.func_1()) 
+> ```
+> En este ejemplo de namespace package, se puede acceder a los modulos y sus funciones de la siguiente manera:
+> 
+> ` mi_paquete.mod_1.func_1()` o `mi_paquete.mod_2.func_3()` sin necesidad de importarlos directamente y **esto como solución a las importaciones o funciones que pueden estar bajo el mismo nombre**. 
+> 
+> *Cabe aclarar que no se pueden invocar directamente sin antes haberlos importado en*`mi_paquete/__init__.py`
+
+En resumen, la principal diferencia entre los paquetes regulares y los de espacio de nombres es que los paquetes regulares están contenidos en un solo directorio y requieren un archivo `__init__.py`, mientras que los paquetes de espacio de nombres pueden extenderse a través de múltiples directorios y no requieren un archivo `__init__.py`.
+
