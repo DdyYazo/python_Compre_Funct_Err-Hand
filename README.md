@@ -388,7 +388,9 @@ print(unique)
 
 
 ## Diferencias entre `List` vs `Tuples` vs `Sets`
-![](https://i.postimg.cc/B6TvLHvk/imagen-2024-01-17-180952810.png)
+<p align="center">
+  <img src="https://i.postimg.cc/zGMXtDWy/imagen-2024-02-22-151915705.png" alt="Aquí va el texto del enlace">
+</p>
 
 
 
@@ -662,6 +664,7 @@ print(result)
 <p align="center">
   <img src="https://i.postimg.cc/h4sX8YQB/imagen-2024-01-24-181612046.png" alt="Aquí va el texto del enlace">
 </p>
+
 
 
 
@@ -1271,3 +1274,322 @@ Python fusionará estos directorios en un único paquete de espacio de nombres `
 
 En resumen, la principal diferencia entre los paquetes regulares y los de espacio de nombres es que los paquetes regulares están contenidos en un solo directorio y requieren un archivo `__init__.py`, mientras que los paquetes de espacio de nombres pueden extenderse a través de múltiples directorios y no requieren un archivo `__init__.py`.
 
+
+
+
+# Módulo 5: Manipulación de archivos y errores en Python
+
+## [23_iter.py](Mod_5_Python_Files_Errors/23_iter.py): Iterables en Pyhon y su comportamiento
+
+Un iterable en Python es cualquier objeto capaz de devolver sus elementos uno a uno, permitiendo que se recorra en un bucle for. Las listas, tuplas, cadenas, diccionarios y conjuntos son ejemplos de objetos iterables.
+
+### Primer método: bucle `for`:
+```python
+mi_lista = [1, 2, 3, 4, 5]
+for elemento in mi_lista:
+    print(elemento)
+```
+En este ejemplo, `mi_lista` es un iterable. El bucle `for` recorre cada elemento de la lista uno por uno.
+> [!IMPORTANT]
+> 
+> El bucle `for` es la forma más sencilla de trabajar con iterables en Python, **maneja automáticamente los detalles de la iteración y es fácil de usar, pero ofrece menos control.** 
+
+### Segundo método: iter y next:
+```python
+mi_lista = [1, 2, 3, 4, 5]
+mi_iterador = iter(mi_lista)
+
+print(next(mi_iterador))  # Imprime: 1
+print(next(mi_iterador))  # Imprime: 2
+```
+En este ejemplo, usamos la función `iter` para obtener un iterador de `mi_lista`. Un iterador es un objeto que implementa el método `__next__`, que accede a los elementos del iterable uno a uno. La función `next` llama al método `__next__` del iterador para obtener el siguiente elemento.
+
+> [!IMPORTANT]
+> 
+> Usar `iter` y `next` proporciona más control sobre la iteración, permitiendo acceder a los elementos uno por uno manualmente, **pero es un poco más complicado y demorado.**
+
+### Tercer método: metodo __iter__ y __next__:
+```python
+class MiRango:
+    def __init__(self, maximo):
+        self.maximo = maximo
+        self.valor = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.valor >= self.maximo:
+            raise StopIteration
+        self.valor += 1
+        return self.valor - 1
+
+for numero in MiRango(5):
+    print(numero)  # Imprime los números de 0 a 4
+```
+En este ejemplo, MiRango es una clase que implementa los métodos` __iter__` y `__next__`, lo que la convierte en un iterable personalizado.` __iter__` devuelve el objeto iterable (en este caso, self). `__next__` define cómo obtener el siguiente elemento del iterable. Cuando no quedan más elementos, `__next__` debe lanzar la excepción StopIteration para señalar el final del iterable.
+
+> [!IMPORTANT]
+> 
+> Crear un iterable personalizado con `__iter__` y `__next__` ofrece la máxima flexibilidad, permitiendo definir cómo se deben obtener los elementos, **pero requiere una comprensión más profunda de los iterables y es más avanzado, a pesar de dar maxima flexibilidad.**
+
+
+## [24_errors.py](Mod_5_Python_Files_Errors/24_errors.py): Errores o `Exceptions` en Pyhon 
+
+
+> [!IMPORTANT]
+> Un **error o excepción** en Python es un evento que ocurre durante la ejecución de un programa que interrumpe el flujo normal del programa. Cuando Python encuentra una situación que no puede manejar, genera una excepción. Una excepción es un objeto Python que representa un error.
+> 
+> ### Ejemplo de un Error grave
+> Si un script Python contiene un error que lleva a una excepción, el script se detendrá inmediatamente y el error será reportado. Esto puede ser problemático si estás ejecutando un programa de larga duración que se detiene a mitad de camino debido a un error.
+> Las implicaciones de las excepciones no manejadas en los programas pueden ser significativas:
+> - **Interrupción del programa**: Cuando se lanza una excepción y no se maneja, el programa se detiene inmediatamente. Esto puede ser problemático si el programa es crítico para alguna operación.
+> - **Pérdida de trabajo**: Si un programa se detiene debido a una excepción, todo el trabajo que hizo el programa puede perderse.
+> - **Estado inconsistente**: Si un programa se detiene a mitad de una operación, puede dejar los datos en un estado inconsistente.
+> **Experiencia del usuario**: Para los programas con una interfaz de usuario, una excepción no manejada puede resultar en un cierre inesperado del programa, lo que puede ser frustrante para el usuario.
+
+### Excepciones mas compunes en Python
+
+- `TypeError`: Ocurre cuando se realiza una operación o función con un tipo de objeto inapropiado.
+- `ValueError`: Ocurre cuando una operación o función recibe un argumento con el tipo correcto pero valor inapropiado.
+- `IndexError`: Ocurre cuando se intenta acceder a un índice fuera del rango en una lista o cualquier otro tipo de secuencia.
+- `KeyError`: Ocurre cuando se intenta acceder a una clave que no existe en un diccionario.
+- `FileNotFoundError`: Ocurre cuando se intenta abrir un archivo que no existe.
+
+> [!IMPORTANT]
+> ### Fuente para consultar la lista de excepciones resutantes
+> <p align="center">
+> <a href="https://www.w3schools.com/python/python_ref_exceptions.asp">
+> <img src="https://i.postimg.cc/fWqWcGkD/imagen-2024-02-29-163438157.png" alt="Aquí va el texto del enlace">
+> </a>
+> </p>
+
+
+### Excepción importante: `AssertionError` al verificar condiciones
+Esta excepción se lanza cuando una afirmación (assert) falla. Las afirmaciones son una forma de verificar que las condiciones sean como esperas.
+```python
+suma = lambda a, b: a + (b*2)
+assert suma(1, 2) == 3  # AssertionError
+```
+> [!NOTE]
+> 
+> ### Lanzar excepciones personalizadas con `raise Excepcion`
+> 
+> Además de las excepciones predefinidas en Python, también puedes lanzar tus propias excepciones personalizadas con la palabra reservada raise. Esto es útil cuando quieres que tu programa falle cuando se cumple una cierta condición.
+```python
+age = 11
+if age > 10:
+    raise Exception(f'La edad {age} no puede ser mayor a 10')  # Exception: La edad 11 no puede ser mayor a 10
+```
+
+
+## [25_try-exc.py](Mod_5_Python_Files_Errors/25_try-exc.py): Manejo de errores en Python con `try: except:`
+
+En Python, puedes manejar errores y excepciones utilizando bloques `try/except`. 
+
+### 1. `try:/except:`
+
+El bloque `try/except` se utiliza para capturar y manejar excepciones. El código que puede lanzar una excepción se coloca dentro del bloque `try`, y el código que maneja la excepción se coloca dentro del bloque `except`.
+```python
+try:
+    # Código que puede lanzar una excepción
+    x = 1 / 0
+except ZeroDivisionError:
+    # Código que maneja la excepción
+    print("No se puede dividir por cero.")
+```
+
+### `try:/except: `con excepción personalizada mediante `Raise`
+
+Puedes lanzar tus propias excepciones utilizando la palabra clave raise. Esto es útil cuando quieres indicar que algo ha ido mal en tu programa.
+```python
+try:
+    x = -1
+    if x < 0:
+        raise ValueError("El valor no puede ser negativo")
+except ValueError as e:
+    print(e)
+```
+
+### `try:/except:/finally:`
+
+El bloque finally se ejecuta sin importar si se lanzó una excepción o no. Esto es útil para el código de limpieza que debe ejecutarse sin importar lo que suceda, como cerrar un archivo o una conexión a la base de datos.
+```python
+try:
+    # Código que puede lanzar una excepción
+    x = 1 / 0
+except ZeroDivisionError:
+    # Código que maneja la excepción
+    print("No se puede dividir por cero.")
+finally:
+    # Código que se ejecuta sin importar si se lanzó una excepción o no
+    print("Limpiando recursos...")
+```
+
+### Agrupar varias excepciones
+Puedes manejar varias excepciones en un solo bloque except separándolas con comas.
+
+```python
+try:
+    # Código que puede lanzar una excepción
+    x = 1 / 0
+except (ZeroDivisionError, TypeError):
+    # Código que maneja la excepción
+    print("Ocurrió un error.")
+```
+- **Ejemplo adicional**
+```python
+try:
+### Secciones de código que pueden generar errores
+    print(5/0) # output: ZeroDivisionError: division by zero
+    if age > 10:
+        raise Exception(f'La edad {age} no puede ser mayor a 10')
+    assert 1 != 1 # output: AssertionError
+### Sección de código que se ejecuta si no se generó una excepción
+except ZeroDivisionError as error: 
+    print(error)
+except AssertionError as error:
+    print(error)
+except Exception as error:
+        print(error)
+finally:
+### Sección de código que se ejecuta sin importar si se generó una excepción o no
+    print("Este bloque de código se ejecuta sin importar si se generó una excepción o no")
+```
+
+> [!IMPORTANT]
+> La importancia de manejar excepciones en Python radica en la capacidad de controlar el flujo de un programa incluso en presencia de errores. Permite a los desarrolladores anticipar y planificar situaciones de error, lo que puede mejorar la robustez y la seguridad del programa.
+
+
+
+## [26_file-text_read.py](Mod_5_Python_Files_Errors/26_file-text_read.py): Leer archivos de texto (`.txt`) en Python
+
+### 1. Manejo de archivos mediante la función `open()`
+Para leer un archivo de texto, primero debes abrir el archivo utilizando la función `open()`. Luego, puedes leer el contenido del archivo utilizando el método `read()`,` readline()` o `readlines()`.
+
+```python
+# Abre el archivo en modo de lectura ('r')
+archivo = open('mi_archivo.txt', 'r')
+
+# Lee todo el contenido del archivo
+contenido = archivo.read()
+
+# Imprime el contenido
+print(contenido)
+
+# Cierra el archivo
+archivo.close() 
+```
+
+#### Puntos a tener en cuenta del codigo anterior
+- `open('mi_archivo.txt', 'r')`: Esta línea abre el archivo mi_archivo.txt en modo de lectura `('r')`. **Si el archivo no existe, se lanzará una excepción.**
+- `archivo.close()`: Esta línea cierra el archivo. **Es importante cerrar los archivos después de usarlos para liberar recursos del sistema.**
+
+> [!IMPORTANT]
+> 
+> ### Manejo de archivos con `(with)`
+> 
+> **Es una buena práctica** manejar archivos utilizando la declaración `with`, **ya que se encarga de cerrar el archivo automáticamente después de usarlo**, incluso si se lanza una excepción.
+> ```python
+> with open('mi_archivo.txt', 'r') as archivo:
+>    contenido = archivo.read()
+>    print(contenido)
+> ```
+
+
+> [!TIP]
+> 
+> #### Recorrer el contnendo del archivo con bucle `for` dentro del `with`
+> 
+> Este es un método comúnmente utilizado para leer archivos de texto en Python, especialmente cuando los archivos son demasiado grandes para ser leídos en memoria de una sola vez.
+> ```python
+> # Abre el archivo en modo de lectura ('r') 
+> with open('mi_archivo.txt', 'r') as archivo:
+>    # Recorre cada línea del archivo
+>    for linea in archivo:
+>        # Imprime la línea
+>        print(linea)
+> ```
+> En este código, se recorre cada línea del archivo una por una.
+
+
+## [27_file-text_write.py](Mod_5_Python_Files_Errors/27_file-text_write.py): Escribir en archivos de texto (`.txt`) en Python
+
+En Python, puedes escribir en archivos de texto utilizando la función incorporada `open()`. Esta función toma dos argumentos: el nombre del archivo y el modo en el que se abre el archivo. Los modos más comunes son `'r'` **para lectura**, `'w'` **para escritura**, `'a'` **para añadir**, y `'r+'`, `'w+'` **para lectura y escritura**.
+
+
+- **Ejemplo**
+	- Para escribir en un archivo de texto, primero debes abrir el archivo en modo de escritura `('w')` o en modo de adición `('a')`. Luego, puedes escribir en el archivo utilizando el método `write()`.
+
+```python
+# Abre el archivo en modo de letura ('r+')
+with open('mi_archivo.txt','r+',) as file:
+    for line in file:
+        print(line)
+# Escribe la cadena de texto  en el archivo 
+    file.write("Hola, este es un archivo de texto\n") 
+```
+
+### Modos de apertura de archivos
+
+- `'r'`: Abre el archivo en modo de lectura. Este es el valor por defecto si no se especifica ningún modo.
+- `'w'`: Abre el archivo en modo de escritura. Crea un nuevo archivo si no existe o trunca el archivo si ya existe.
+- `'a'`: Abre el archivo en modo de adición. Crea un nuevo archivo si no existe. Si el archivo ya existe, los datos se añaden al final del archivo sin borrar el contenido existente.
+- `'r+'`: Abre el archivo para lectura y escritura. El archivo debe existir.
+- `'w+'`: Abre el archivo para lectura y escritura. Crea un nuevo archivo si no existe o trunca el archivo si ya existe.
+> [!NOTE]
+> 
+> Es importante recordar que **`'w'` y `'w+'` borrarán el contenido existente del archivo al abrirlo.** *Si quieres añadir contenido a un archivo existente sin borrar el contenido actual, debes usar `'a'` o `'a+'`*.
+
+
+## [28_app_read-csv](28_app_read-csv): Manipulación de archivos `csv` en Python
+
+Python proporciona varias bibliotecas para trabajar con archivos CSV y Excel, como csv y pandas. Aquí te proporciono un ejemplo de cómo puedes manipular estos archivos y la importancia de cada declaración.
+
+### Archivos CSV
+Para trabajar con archivos CSV, puedes usar la biblioteca incorporada csv.
+
+- **Ejemlo**
+```python
+import csv
+
+def run(path):
+    with open(path, "r") as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        header = next(reader)
+        for row in reader:
+            iterable = zip(header, row)
+            country_dict = {key: value for key, value in iterable}
+            print(country_dict)
+
+# Si este archivo se está ejecutando como el principal, llama a la función run con la ruta al archivo CSV
+if __name__ == "__main__":
+    run('/root/platziCourses/Python_Courses/python_Compre_Funct_Err-Hand/Mod_5_Python_Files_Errors/app_read-csv/data.csv')
+```
+- **Explicación del codigo**
+  - `import csv`: Esta línea importa la biblioteca csv de Python, que proporciona funcionalidades para leer y escribir archivos CSV.
+
+  - `def run(path)`: Esta línea define una función llamada run que toma un argumento path. path es la ruta al archivo CSV que quieres leer.
+ 
+  - `with open(path, "r") as csvfile`: Esta línea abre el archivo CSV en modo de lectura. with asegura que el archivo se cierre correctamente después de usarlo.
+  
+  - `reader = csv.reader(csvfile, delimiter=',')`: Esta línea crea un objeto reader que puede iterar sobre las líneas del archivo CSV. El argumento delimiter=',' especifica que las columnas del CSV están separadas por comas.
+  
+  - `header = next(reader)`: Esta línea obtiene la primera línea del CSV, que generalmente contiene los encabezados de las columnas.
+  
+  - `for row in reader`: Esta línea comienza un bucle que itera sobre cada línea restante del CSV.
+  
+  - `iterable = zip(header, row)`: Esta línea combina los encabezados y los valores de la fila actual en un objeto iterable de pares.
+  
+  - `country_dict = {key: value for key, value in iterable}`: Esta línea crea un diccionario donde las claves son los encabezados y los valores son los valores de la fila actual.
+  
+  - `print(country_dict)`: Esta línea imprime el diccionario.
+
+> [!NOTE]
+>
+> La biblioteca de `csv` *proporciona muchas más funcionalidades para manipular archivos CSV, como escribir datos, filtrar datos, realizar cálculos, etc.*
+
+
+
+
+# Módulo 5: Manipulación de archivos y errores en Python
