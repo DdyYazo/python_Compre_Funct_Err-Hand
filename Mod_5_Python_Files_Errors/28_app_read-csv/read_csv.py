@@ -14,7 +14,7 @@ import csv
             print(country_dict)
 
 if __name__ == "__main__":
-    run('/root/platziCourses/Python_Courses/python_Compre_Funct_Err-Hand/Mod_5_Python_Files_Errors/app_read-csv/data.csv') # Se llama la función run() para que se pueda ejecutar en otros archivos
+    run('./app_read-csv/data.csv') # Se llama la función run() para que se pueda ejecutar en otros archivos
  """
 
 
@@ -31,5 +31,5 @@ def run(path): # Se define la función run() que recibe como parámetro la varia
         return data
             
 if __name__ == "__main__":
-    data = run('/root/platziCourses/Python_Courses/python_Compre_Funct_Err-Hand/Mod_5_Python_Files_Errors/app_read-csv/data.csv') # Se llama la función run() para que se pueda ejecutar en otros archivos
+    data = run('./28_app_read-csv/data.csv') # Se llama la función run() para que se pueda ejecutar en otros archivos
     print(data[1]) # Se imprime la variable data para que se pueda ver la información del archivo csv en forma de diccionario

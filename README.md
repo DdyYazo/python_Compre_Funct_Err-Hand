@@ -3,7 +3,125 @@
 
 Este repositorio es una excelente fuente de información para cualquier persona que quiera aprender o revisar estos conceptos de Python.
 
-
+# Tabla de Contenido
+- [Python\_Compre\_Funct\_Err-Hand](#python_compre_funct_err-hand)
+- [Tabla de Contenido](#tabla-de-contenido)
+  - [El Zen de Python](#el-zen-de-python)
+- [Módulo 1: Estructura de datos p1: Conjuntos `(sets)`](#módulo-1-estructura-de-datos-p1-conjuntos-sets)
+  - [01\_set.py: Creación y manipulación de conjuntos en Python](#01_setpy-creación-y-manipulación-de-conjuntos-en-python)
+    - [Características de los conjuntos en Python:](#características-de-los-conjuntos-en-python)
+    - [Sets en estructuras de datos](#sets-en-estructuras-de-datos)
+    - [Transformación de `(sets)` a estructuras como `(list)`](#transformación-de-sets-a-estructuras-como-list)
+  - [02\_crud-set.py: Operaciones CRUD en conjuntos de Python](#02_crud-setpy-operaciones-crud-en-conjuntos-de-python)
+  - [03\_set-operations.py: Operaciones de conjuntos en Python](#03_set-operationspy-operaciones-de-conjuntos-en-python)
+    - [1. Unión](#1-unión)
+    - [2. Intersección](#2-intersección)
+    - [3. Diferencia](#3-diferencia)
+    - [4. Diferencia simétrica](#4-diferencia-simétrica)
+    - [5. Subconjunto](#5-subconjunto)
+    - [6. Superconjunto](#6-superconjunto)
+- [Módulo 2: Estructuras de datos p2: Listas `(list)` y Diccionarios `(dict)` con Comprenhentions](#módulo-2-estructuras-de-datos-p2-listas-list-y-diccionarios-dict-con-comprenhentions)
+  - [04\_list-compren.py: Comprensión de listas en Python](#04_list-comprenpy-comprensión-de-listas-en-python)
+    - [Sintaxis](#sintaxis)
+    - [Uso del comprenhension](#uso-del-comprenhension)
+    - [Uso de condicionales en comprenhension](#uso-de-condicionales-en-comprenhension)
+  - [05\_dict-compren.py: Comprensión de diccionarios en Python](#05_dict-comprenpy-comprensión-de-diccionarios-en-python)
+    - [Comprensión de Diccionarios:](#comprensión-de-diccionarios)
+    - [Sintaxis](#sintaxis-1)
+    - [Comprensión de Diccionarios a partir de una lista](#comprensión-de-diccionarios-a-partir-de-una-lista)
+    - [Comprensión de Diccionarios a partir de dos listas haciendo uso de la función `zip` y `len`](#comprensión-de-diccionarios-a-partir-de-dos-listas-haciendo-uso-de-la-función-zip-y-len)
+  - [06\_dict-compren-condi.py: Comprensión de diccionarios con condiciones en Python](#06_dict-compren-condipy-comprensión-de-diccionarios-con-condiciones-en-python)
+    - [Sintaxis](#sintaxis-2)
+    - [Ejemplo de Comprensión de Diccionarios con Condiciones](#ejemplo-de-comprensión-de-diccionarios-con-condiciones)
+  - [Diferencias entre `List` vs `Tuples` vs `Sets`](#diferencias-entre-list-vs-tuples-vs-sets)
+- [Módulo 3: Funciones en Python (Las mas utilizadas y sus diferencias)](#módulo-3-funciones-en-python-las-mas-utilizadas-y-sus-diferencias)
+  - [07\_fuctions.py: Funciones `def` en Python](#07_fuctionspy-funciones-def-en-python)
+    - [Definición de Funciones](#definición-de-funciones)
+    - [Llamada de Funciones](#llamada-de-funciones)
+    - [Función sin Parámetros](#función-sin-parámetros)
+    - [Función con Parámetros](#función-con-parámetros)
+    - [Función dentro de otra función](#función-dentro-de-otra-función)
+    - [Principio DRY](#principio-dry)
+  - [08\_func-return.py: Funciones con retorno de variables](#08_func-returnpy-funciones-con-retorno-de-variables)
+    - [Definición de Funciones con Retorno](#definición-de-funciones-con-retorno)
+    - [Llamada de Funciones con Retorno](#llamada-de-funciones-con-retorno)
+    - [Comprendiendo la logica del return mediante un ciclo for](#comprendiendo-la-logica-del-return-mediante-un-ciclo-for)
+    - [Implementación de una "Función" para agilizar el código anterior](#implementación-de-una-función-para-agilizar-el-código-anterior)
+    - [Implementación de una "Función con retorno"](#implementación-de-una-función-con-retorno)
+  - [09\_func-returnMul.py: Funciones con retorno de multiples valores y valores por defecto](#09_func-returnmulpy-funciones-con-retorno-de-multiples-valores-y-valores-por-defecto)
+    - [Funciones con Retorno de Múltiples Valores](#funciones-con-retorno-de-múltiples-valores)
+    - [Funciones con Parámetros por Defecto](#funciones-con-parámetros-por-defecto)
+    - [Reasignar un nuevo argumento a un parametro especifico](#reasignar-un-nuevo-argumento-a-un-parametro-especifico)
+    - [Retornar mas de una función por separado](#retornar-mas-de-una-función-por-separado)
+  - [10\_scope.py: Alcance de variables o `scope` en Python](#10_scopepy-alcance-de-variables-o-scope-en-python)
+    - [Variables Globales](#variables-globales)
+    - [Variables Locales](#variables-locales)
+    - [Conversión de Variables Locales en Globales](#conversión-de-variables-locales-en-globales)
+    - [Diferencia entre una variable global y una variable local](#diferencia-entre-una-variable-global-y-una-variable-local)
+  - [12\_lambda-func.py: Funciones `lamba` o anónimas](#12_lambda-funcpy-funciones-lamba-o-anónimas)
+    - [Sintaxis](#sintaxis-3)
+    - [Uso de Funciones Lambda](#uso-de-funciones-lambda)
+    - [Función declarativa vs Función Lambda](#función-declarativa-vs-función-lambda)
+    - [Función declarativa](#función-declarativa)
+    - [Función lambda](#función-lambda)
+  - [13\_HOF.py: HOF `(Higher Order Functions)` implementando Funciones Declarativas y Funciones Lambda](#13_hofpy-hof-higher-order-functions-implementando-funciones-declarativas-y-funciones-lambda)
+    - [Funciones declarativas que reciben como paramatro una función](#funciones-declarativas-que-reciben-como-paramatro-una-función)
+    - [Función que Retorna Otra Función Utilizando Funciones `Lambda`](#función-que-retorna-otra-función-utilizando-funciones-lambda)
+    - [Declarar Lambdas Directamente al Designar los Argumentos de una Función](#declarar-lambdas-directamente-al-designar-los-argumentos-de-una-función)
+- [Funciones más utilizadas en Python y su comportamiento](#funciones-más-utilizadas-en-python-y-su-comportamiento)
+  - [14\_map-func.py: Función `map`](#14_map-funcpy-función-map)
+    - [Sintaxis](#sintaxis-4)
+    - [Ejemplo contextual para las función `map`](#ejemplo-contextual-para-las-función-map)
+    - [Implementación de la función `map`](#implementación-de-la-función-map)
+    - [Ejemplo donde se reemplaza los valores iniciales de una lista por los de otra lista](#ejemplo-donde-se-reemplaza-los-valores-iniciales-de-una-lista-por-los-de-otra-lista)
+  - [15\_map-dicts.py: Función `map` en diccionarios](#15_map-dictspy-función-map-en-diccionarios)
+    - [Implementación de función `map` en dictionarys](#implementación-de-función-map-en-dictionarys)
+    - [Diferencia entre `copy` y `deepcopy`](#diferencia-entre-copy-y-deepcopy)
+    - [Alternativa a copy con otra forma mediante la función `map`](#alternativa-a-copy-con-otra-forma-mediante-la-función-map)
+  - [17\_filter-func.py: Función `filter`](#17_filter-funcpy-función-filter)
+    - [Sintaxis](#sintaxis-5)
+    - [Función `filter` en listas](#función-filter-en-listas)
+    - [Función `filter` en diccionarios](#función-filter-en-diccionarios)
+  - [18\_reduce-func.py: Función `reduce` y uso de la libreria `functools` con el Módulo `reduce`](#18_reduce-funcpy-función-reduce-y-uso-de-la-libreria-functools-con-el-módulo-reduce)
+    - [Sintaxis](#sintaxis-6)
+    - [Importación de la libreria `functools`](#importación-de-la-libreria-functools)
+    - [Función `reduce` en listas](#función-reduce-en-listas)
+    - [Función `reduce` en diccionarios](#función-reduce-en-diccionarios)
+- [Módulo 4: Módulos en Python](#módulo-4-módulos-en-python)
+  - [19. ¿Que son los modulos?](#19-que-son-los-modulos)
+    - [19.1 Modulos por defecto en Python y los mas utilizados](#191-modulos-por-defecto-en-python-y-los-mas-utilizados)
+  - [20\_modules-app: ¿Como construir modulos en Python?](#20_modules-app-como-construir-modulos-en-python)
+    - [Sintaxis](#sintaxis-7)
+    - [Renombrar un modulo o una función al importarla](#renombrar-un-modulo-o-una-función-al-importarla)
+    - [Ejemplos de Funciones y Variables importadas de un `modulo.py`](#ejemplos-de-funciones-y-variables-importadas-de-un-modulopy)
+      - [1 Funciones Importadas](#1-funciones-importadas)
+    - [Paquetes regulares `(regular packages)` y Paquetes de espacio de nombres `(namespaces packages)`](#paquetes-regulares-regular-packages-y-paquetes-de-espacio-de-nombres-namespaces-packages)
+    - [Diferencia entre `regular pkg` y `namespaces pkg`](#diferencia-entre-regular-pkg-y-namespaces-pkg)
+- [Módulo 5: Manipulación de archivos y errores en Python](#módulo-5-manipulación-de-archivos-y-errores-en-python)
+  - [23\_iter.py: Iterables en Pyhon y su comportamiento](#23_iterpy-iterables-en-pyhon-y-su-comportamiento)
+    - [Primer método: bucle `for`:](#primer-método-bucle-for)
+    - [Segundo método: iter y next:](#segundo-método-iter-y-next)
+    - [Tercer método: metodo __iter__ y __next__:](#tercer-método-metodo-iter-y-next)
+  - [24\_errors.py: Errores o `Exceptions` en Pyhon](#24_errorspy-errores-o-exceptions-en-pyhon)
+    - [Excepciones mas compunes en Python](#excepciones-mas-compunes-en-python)
+    - [Excepción importante: `AssertionError` al verificar condiciones](#excepción-importante-assertionerror-al-verificar-condiciones)
+  - [25\_try-exc.py: Manejo de errores en Python con `try: except:`](#25_try-excpy-manejo-de-errores-en-python-con-try-except)
+    - [1. `try:/except:`](#1-tryexcept)
+    - [`try:/except: `con excepción personalizada mediante `Raise`](#tryexcept-con-excepción-personalizada-mediante-raise)
+    - [`try:/except:/finally:`](#tryexceptfinally)
+    - [Agrupar varias excepciones](#agrupar-varias-excepciones)
+  - [26\_file-text\_read.py: Leer archivos de texto (`.txt`) en Python](#26_file-text_readpy-leer-archivos-de-texto-txt-en-python)
+    - [1. Manejo de archivos mediante la función `open()`](#1-manejo-de-archivos-mediante-la-función-open)
+      - [Puntos a tener en cuenta del codigo anterior](#puntos-a-tener-en-cuenta-del-codigo-anterior)
+  - [27\_file-text\_write.py: Escribir en archivos de texto (`.txt`) en Python](#27_file-text_writepy-escribir-en-archivos-de-texto-txt-en-python)
+    - [Modos de apertura de archivos](#modos-de-apertura-de-archivos)
+  - [read\_csv.py: Manipulación de archivos `csv` en Python](#read_csvpy-manipulación-de-archivos-csv-en-python)
+    - [Archivos CSV](#archivos-csv)
+- [Módulo 6: Graficas en Python](#módulo-6-graficas-en-python)
+  - [charts.py: Generar gráficos utilizando matplotlib en Python](#chartspy-generar-gráficos-utilizando-matplotlib-en-python)
+    - [1. Matplotlib](#1-matplotlib)
+    - [2. Seaborn](#2-seaborn)
+    - [3. Plotly](#3-plotly)
 ## El Zen de Python
  El [Zen_python.py](Zen_python.py) muestra el Zen de Python, que es una colección de 19 "aforismos" que sirven como principios guía para escribir programas en Python. Aquí hay un resumen de estos aforismos:
 
@@ -956,7 +1074,7 @@ print(total_goals) # Output: 11
 
 # Módulo 4: Módulos en Python
 
-## 1. ¿Que son los modulos?
+## 19. ¿Que son los modulos?
 > [!IMPORTANT]
 > 
 > Los modulos **son archivos que contienen un conjunto de funciones que pueden ser importadas y utilizadas en otros programas.** 
@@ -964,7 +1082,7 @@ print(total_goals) # Output: 11
 > 
 > Es por ello que **los modulos son una forma de organizar y reutilizar código.**
 
-### 1.1 Modulos por defecto en Python y los mas utilizados
+### 19.1 Modulos por defecto en Python y los mas utilizados
 - `random`: Genera números aleatorios.
 ```python
 from random import randint
@@ -1542,7 +1660,7 @@ with open('mi_archivo.txt','r+',) as file:
 > Es importante recordar que **`'w'` y `'w+'` borrarán el contenido existente del archivo al abrirlo.** *Si quieres añadir contenido a un archivo existente sin borrar el contenido actual, debes usar `'a'` o `'a+'`*.
 
 
-## [28_app_read-csv](28_app_read-csv): Manipulación de archivos `csv` en Python
+## [read_csv.py](./Mod_5_Python_Files_Errors/28_app_read-csv/read_csv.py): Manipulación de archivos `csv` en Python
 
 Python proporciona varias bibliotecas para trabajar con archivos CSV y Excel, como csv y pandas. Aquí te proporciono un ejemplo de cómo puedes manipular estos archivos y la importancia de cada declaración.
 
@@ -1564,7 +1682,7 @@ def run(path):
 
 # Si este archivo se está ejecutando como el principal, llama a la función run con la ruta al archivo CSV
 if __name__ == "__main__":
-    run('/root/platziCourses/Python_Courses/python_Compre_Funct_Err-Hand/Mod_5_Python_Files_Errors/app_read-csv/data.csv')
+    run('./app_read-csv/data.csv')
 ```
 - **Explicación del codigo**
   - `import csv`: Esta línea importa la biblioteca csv de Python, que proporciona funcionalidades para leer y escribir archivos CSV.
@@ -1589,7 +1707,66 @@ if __name__ == "__main__":
 >
 > La biblioteca de `csv` *proporciona muchas más funcionalidades para manipular archivos CSV, como escribir datos, filtrar datos, realizar cálculos, etc.*
 
+> [!IMPORTANT]
+> ### Fuente para consultar datasets csv
+>
+> La siguiente fuente se utiliza en su mayoria para tomar datasets compartidos por la comunidad
+> <p align="center">
+> <a href="https://www.kaggle.com/datasets/iamsouravbanerjee/world-population-dataset">
+> <img src="https://i.postimg.cc/8cKYYN3j/imagen-2024-03-11-155704440.png" alt="Aquí va el texto del enlace">
+> </a>
+> </p>
 
 
 
-# Módulo 5: Manipulación de archivos y errores en Python
+# Módulo 6: Graficas en Python
+
+## [charts.py](./Mod_6_Python_Charts/29_app_chart_matplotlib/charts.py): Generar gráficos utilizando matplotlib en Python
+
+Python ofrece varias bibliotecas para la visualización de datos, entre las que se incluyen **Matplotlib**, **Seaborn** y **Plotly**.
+
+### 1. Matplotlib 
+
+Es una de las bibliotecas más utilizadas para la creación de gráficos estáticos, animados e interactivos en Python. Matplotlib es altamente personalizable y puede ser usado para crear una amplia variedad de gráficos.
+
+```python
+    import matplotlib.pyplot as plt
+
+    x = [1, 2, 3, 4, 5]
+    y = [2, 3, 5, 7, 11]
+
+    plt.plot(x, y)
+    plt.show()
+```
+- **Descripción**
+  -  En este ejemplo, `import matplotlib.pyplot as plt` importa el módulo `pyplot` de Matplotlib, que proporciona una interfaz para crear gráficos. `plt.plot(x, y)` crea un gráfico de líneas y `plt.show()` muestra el gráfico.
+
+### 2. Seaborn 
+
+Es una biblioteca de visualización de datos basada en Matplotlib que proporciona una interfaz de alto nivel para crear gráficos estadísticos atractivos.
+
+```python
+    import seaborn as sns
+
+    tips = sns.load_dataset("tips")
+    sns.boxplot(x="day", y="total_bill", data=tips)
+```
+- **Descripción**
+  -  En este ejemplo, `import seaborn as sns` importa la biblioteca Seaborn. `sns.load_dataset("tips")` carga un conjunto de datos incorporado en Seaborn llamado **"tips"**. `sns.boxplot(x="day", y="total_bill", data=tips)` crea un boxplot de la columna **"total_bill"** agrupada por **"day"**.
+
+### 3. Plotly 
+
+Es una biblioteca que permite crear gráficos interactivos.
+
+```python
+    import plotly.express as px
+
+    df = px.data.iris()
+    fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
+    fig.show()
+```
+- **Descripción**
+  -  En este ejemplo, `import plotly.express as px` importa el módulo `express` de Plotly, que proporciona una interfaz para crear gráficos. `px.data.iris()` carga un conjunto de datos incorporado en Plotly llamado **"iris"**. `px.scatter(df, x="sepal_width", y="sepal_length", color="species")` crea un gráfico de dispersión de las columnas **"sepal_width"** y **"sepal_length"**, coloreado por **"species"**. fig`.show()` muestra el gráfico.
+
+
+

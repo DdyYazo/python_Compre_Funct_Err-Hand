@@ -12,6 +12,6 @@ def read_csv(path):
             total += int(row[1])
         return total
     
-response = read_csv('/root/platziCourses/Python_Courses/python_Compre_Funct_Err-Hand/Practice_Projects/8. Practice CSV read/data.csv')
+response = read_csv('./8. Practice CSV read/data.csv')
 print(response) # 767.0
 
